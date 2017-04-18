@@ -1,0 +1,4117 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/InCar/ali-mns">ali-mqs (v1.2.3)</a>
+</h1>
+<h4>The nodejs SDK for aliyun mqs service</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ali-mqs">module ali-mqs</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ali-mqs.Account">
+            function <span class="apidocSignatureSpan">ali-mqs.</span>Account
+            <span class="apidocSignatureSpan">(ownerId, keyId, keySecret)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ali-mqs.Account.prototype.b64md5">
+            function <span class="apidocSignatureSpan">ali-mqs.</span>Account.prototype.b64md5
+            <span class="apidocSignatureSpan">(text)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ali-mqs.Account.prototype.getKeyId">
+            function <span class="apidocSignatureSpan">ali-mqs.</span>Account.prototype.getKeyId
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ali-mqs.Account.prototype.getOwnerId">
+            function <span class="apidocSignatureSpan">ali-mqs.</span>Account.prototype.getOwnerId
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ali-mqs.Account.prototype.hmac_sha1">
+            function <span class="apidocSignatureSpan">ali-mqs.</span>Account.prototype.hmac_sha1
+            <span class="apidocSignatureSpan">(text, encoding)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ali-mqs.MQ">
+            function <span class="apidocSignatureSpan">ali-mqs.</span>MQ
+            <span class="apidocSignatureSpan">(name, account, region)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ali-mqs.MQ.prototype.base64ToUtf8">
+            function <span class="apidocSignatureSpan">ali-mqs.</span>MQ.prototype.base64ToUtf8
+            <span class="apidocSignatureSpan">(src)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ali-mqs.MQ.prototype.deleteP">
+            function <span class="apidocSignatureSpan">ali-mqs.</span>MQ.prototype.deleteP
+            <span class="apidocSignatureSpan">(receiptHandle)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ali-mqs.MQ.prototype.getAttrsP">
+            function <span class="apidocSignatureSpan">ali-mqs.</span>MQ.prototype.getAttrsP
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ali-mqs.MQ.prototype.makeAttrURL">
+            function <span class="apidocSignatureSpan">ali-mqs.</span>MQ.prototype.makeAttrURL
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ali-mqs.MQ.prototype.makeURL">
+            function <span class="apidocSignatureSpan">ali-mqs.</span>MQ.prototype.makeURL
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ali-mqs.MQ.prototype.notifyRecv">
+            function <span class="apidocSignatureSpan">ali-mqs.</span>MQ.prototype.notifyRecv
+            <span class="apidocSignatureSpan">(cb, waitSeconds)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ali-mqs.MQ.prototype.notifyRecvInternal">
+            function <span class="apidocSignatureSpan">ali-mqs.</span>MQ.prototype.notifyRecvInternal
+            <span class="apidocSignatureSpan">(cb, waitSeconds)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ali-mqs.MQ.prototype.notifyStopP">
+            function <span class="apidocSignatureSpan">ali-mqs.</span>MQ.prototype.notifyStopP
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ali-mqs.MQ.prototype.peekP">
+            function <span class="apidocSignatureSpan">ali-mqs.</span>MQ.prototype.peekP
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ali-mqs.MQ.prototype.recvP">
+            function <span class="apidocSignatureSpan">ali-mqs.</span>MQ.prototype.recvP
+            <span class="apidocSignatureSpan">(waitSeconds)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ali-mqs.MQ.prototype.reserveP">
+            function <span class="apidocSignatureSpan">ali-mqs.</span>MQ.prototype.reserveP
+            <span class="apidocSignatureSpan">(receiptHandle, reserveSeconds)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ali-mqs.MQ.prototype.sendP">
+            function <span class="apidocSignatureSpan">ali-mqs.</span>MQ.prototype.sendP
+            <span class="apidocSignatureSpan">(msg, priority, delaySeconds)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ali-mqs.MQ.prototype.setAttrsP">
+            function <span class="apidocSignatureSpan">ali-mqs.</span>MQ.prototype.setAttrsP
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ali-mqs.MQ.prototype.utf8ToBase64">
+            function <span class="apidocSignatureSpan">ali-mqs.</span>MQ.prototype.utf8ToBase64
+            <span class="apidocSignatureSpan">(src)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ali-mqs.MQS">
+            function <span class="apidocSignatureSpan">ali-mqs.</span>MQS
+            <span class="apidocSignatureSpan">(account, region)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ali-mqs.MQS.prototype.createP">
+            function <span class="apidocSignatureSpan">ali-mqs.</span>MQS.prototype.createP
+            <span class="apidocSignatureSpan">(name, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ali-mqs.MQS.prototype.deleteP">
+            function <span class="apidocSignatureSpan">ali-mqs.</span>MQS.prototype.deleteP
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ali-mqs.MQS.prototype.listP">
+            function <span class="apidocSignatureSpan">ali-mqs.</span>MQS.prototype.listP
+            <span class="apidocSignatureSpan">(prefix, pageSize, pageMarker)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ali-mqs.MQS.prototype.makeURL">
+            function <span class="apidocSignatureSpan">ali-mqs.</span>MQS.prototype.makeURL
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ali-mqs.OpenStack">
+            function <span class="apidocSignatureSpan">ali-mqs.</span>OpenStack
+            <span class="apidocSignatureSpan">(account)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ali-mqs.OpenStack.prototype.authorize">
+            function <span class="apidocSignatureSpan">ali-mqs.</span>OpenStack.prototype.authorize
+            <span class="apidocSignatureSpan">(httpVerb, mqsURI, mqsHeaders, contentType, contentMD5, tm)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ali-mqs.OpenStack.prototype.makeHeaders">
+            function <span class="apidocSignatureSpan">ali-mqs.</span>OpenStack.prototype.makeHeaders
+            <span class="apidocSignatureSpan">(mothod, url, headers, body)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ali-mqs.OpenStack.prototype.sendP">
+            function <span class="apidocSignatureSpan">ali-mqs.</span>OpenStack.prototype.sendP
+            <span class="apidocSignatureSpan">(method, url, body, headers)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ali-mqs.OpenStack.prototype.signature">
+            function <span class="apidocSignatureSpan">ali-mqs.</span>OpenStack.prototype.signature
+            <span class="apidocSignatureSpan">(httpVerb, mqsURI, mqsHeaders, contentType, contentMD5, tm)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">ali-mqs.</span>Account.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">ali-mqs.</span>MQ.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">ali-mqs.</span>MQS.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">ali-mqs.</span>OpenStack.prototype</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ali-mqs.Account">module ali-mqs.Account</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ali-mqs.Account.Account">
+            function <span class="apidocSignatureSpan">ali-mqs.</span>Account
+            <span class="apidocSignatureSpan">(ownerId, keyId, keySecret)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ali-mqs.Account.prototype">module ali-mqs.Account.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ali-mqs.Account.prototype.b64md5">
+            function <span class="apidocSignatureSpan">ali-mqs.Account.prototype.</span>b64md5
+            <span class="apidocSignatureSpan">(text)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ali-mqs.Account.prototype.getKeyId">
+            function <span class="apidocSignatureSpan">ali-mqs.Account.prototype.</span>getKeyId
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ali-mqs.Account.prototype.getOwnerId">
+            function <span class="apidocSignatureSpan">ali-mqs.Account.prototype.</span>getOwnerId
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ali-mqs.Account.prototype.hmac_sha1">
+            function <span class="apidocSignatureSpan">ali-mqs.Account.prototype.</span>hmac_sha1
+            <span class="apidocSignatureSpan">(text, encoding)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ali-mqs.Account.prototype.b64md5">module ali-mqs.Account.prototype.b64md5</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ali-mqs.Account.prototype.b64md5.b64md5">
+            function <span class="apidocSignatureSpan">ali-mqs.Account.prototype.</span>b64md5
+            <span class="apidocSignatureSpan">(text)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ali-mqs.Account.prototype.getKeyId">module ali-mqs.Account.prototype.getKeyId</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ali-mqs.Account.prototype.getKeyId.getKeyId">
+            function <span class="apidocSignatureSpan">ali-mqs.Account.prototype.</span>getKeyId
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ali-mqs.Account.prototype.getOwnerId">module ali-mqs.Account.prototype.getOwnerId</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ali-mqs.Account.prototype.getOwnerId.getOwnerId">
+            function <span class="apidocSignatureSpan">ali-mqs.Account.prototype.</span>getOwnerId
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ali-mqs.Account.prototype.hmac_sha1">module ali-mqs.Account.prototype.hmac_sha1</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ali-mqs.Account.prototype.hmac_sha1.hmac_sha1">
+            function <span class="apidocSignatureSpan">ali-mqs.Account.prototype.</span>hmac_sha1
+            <span class="apidocSignatureSpan">(text, encoding)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ali-mqs.MQ">module ali-mqs.MQ</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ali-mqs.MQ.MQ">
+            function <span class="apidocSignatureSpan">ali-mqs.</span>MQ
+            <span class="apidocSignatureSpan">(name, account, region)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ali-mqs.MQ.prototype">module ali-mqs.MQ.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ali-mqs.MQ.prototype.base64ToUtf8">
+            function <span class="apidocSignatureSpan">ali-mqs.MQ.prototype.</span>base64ToUtf8
+            <span class="apidocSignatureSpan">(src)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ali-mqs.MQ.prototype.deleteP">
+            function <span class="apidocSignatureSpan">ali-mqs.MQ.prototype.</span>deleteP
+            <span class="apidocSignatureSpan">(receiptHandle)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ali-mqs.MQ.prototype.getAttrsP">
+            function <span class="apidocSignatureSpan">ali-mqs.MQ.prototype.</span>getAttrsP
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ali-mqs.MQ.prototype.makeAttrURL">
+            function <span class="apidocSignatureSpan">ali-mqs.MQ.prototype.</span>makeAttrURL
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ali-mqs.MQ.prototype.makeURL">
+            function <span class="apidocSignatureSpan">ali-mqs.MQ.prototype.</span>makeURL
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ali-mqs.MQ.prototype.notifyRecv">
+            function <span class="apidocSignatureSpan">ali-mqs.MQ.prototype.</span>notifyRecv
+            <span class="apidocSignatureSpan">(cb, waitSeconds)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ali-mqs.MQ.prototype.notifyRecvInternal">
+            function <span class="apidocSignatureSpan">ali-mqs.MQ.prototype.</span>notifyRecvInternal
+            <span class="apidocSignatureSpan">(cb, waitSeconds)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ali-mqs.MQ.prototype.notifyStopP">
+            function <span class="apidocSignatureSpan">ali-mqs.MQ.prototype.</span>notifyStopP
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ali-mqs.MQ.prototype.peekP">
+            function <span class="apidocSignatureSpan">ali-mqs.MQ.prototype.</span>peekP
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ali-mqs.MQ.prototype.recvP">
+            function <span class="apidocSignatureSpan">ali-mqs.MQ.prototype.</span>recvP
+            <span class="apidocSignatureSpan">(waitSeconds)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ali-mqs.MQ.prototype.reserveP">
+            function <span class="apidocSignatureSpan">ali-mqs.MQ.prototype.</span>reserveP
+            <span class="apidocSignatureSpan">(receiptHandle, reserveSeconds)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ali-mqs.MQ.prototype.sendP">
+            function <span class="apidocSignatureSpan">ali-mqs.MQ.prototype.</span>sendP
+            <span class="apidocSignatureSpan">(msg, priority, delaySeconds)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ali-mqs.MQ.prototype.setAttrsP">
+            function <span class="apidocSignatureSpan">ali-mqs.MQ.prototype.</span>setAttrsP
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ali-mqs.MQ.prototype.utf8ToBase64">
+            function <span class="apidocSignatureSpan">ali-mqs.MQ.prototype.</span>utf8ToBase64
+            <span class="apidocSignatureSpan">(src)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ali-mqs.MQ.prototype.base64ToUtf8">module ali-mqs.MQ.prototype.base64ToUtf8</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ali-mqs.MQ.prototype.base64ToUtf8.base64ToUtf8">
+            function <span class="apidocSignatureSpan">ali-mqs.MQ.prototype.</span>base64ToUtf8
+            <span class="apidocSignatureSpan">(src)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ali-mqs.MQ.prototype.deleteP">module ali-mqs.MQ.prototype.deleteP</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ali-mqs.MQ.prototype.deleteP.deleteP">
+            function <span class="apidocSignatureSpan">ali-mqs.MQ.prototype.</span>deleteP
+            <span class="apidocSignatureSpan">(receiptHandle)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ali-mqs.MQ.prototype.getAttrsP">module ali-mqs.MQ.prototype.getAttrsP</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ali-mqs.MQ.prototype.getAttrsP.getAttrsP">
+            function <span class="apidocSignatureSpan">ali-mqs.MQ.prototype.</span>getAttrsP
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ali-mqs.MQ.prototype.makeAttrURL">module ali-mqs.MQ.prototype.makeAttrURL</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ali-mqs.MQ.prototype.makeAttrURL.makeAttrURL">
+            function <span class="apidocSignatureSpan">ali-mqs.MQ.prototype.</span>makeAttrURL
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ali-mqs.MQ.prototype.makeURL">module ali-mqs.MQ.prototype.makeURL</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ali-mqs.MQ.prototype.makeURL.makeURL">
+            function <span class="apidocSignatureSpan">ali-mqs.MQ.prototype.</span>makeURL
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ali-mqs.MQ.prototype.notifyRecv">module ali-mqs.MQ.prototype.notifyRecv</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ali-mqs.MQ.prototype.notifyRecv.notifyRecv">
+            function <span class="apidocSignatureSpan">ali-mqs.MQ.prototype.</span>notifyRecv
+            <span class="apidocSignatureSpan">(cb, waitSeconds)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ali-mqs.MQ.prototype.notifyRecvInternal">module ali-mqs.MQ.prototype.notifyRecvInternal</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ali-mqs.MQ.prototype.notifyRecvInternal.notifyRecvInternal">
+            function <span class="apidocSignatureSpan">ali-mqs.MQ.prototype.</span>notifyRecvInternal
+            <span class="apidocSignatureSpan">(cb, waitSeconds)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ali-mqs.MQ.prototype.notifyStopP">module ali-mqs.MQ.prototype.notifyStopP</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ali-mqs.MQ.prototype.notifyStopP.notifyStopP">
+            function <span class="apidocSignatureSpan">ali-mqs.MQ.prototype.</span>notifyStopP
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ali-mqs.MQ.prototype.peekP">module ali-mqs.MQ.prototype.peekP</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ali-mqs.MQ.prototype.peekP.peekP">
+            function <span class="apidocSignatureSpan">ali-mqs.MQ.prototype.</span>peekP
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ali-mqs.MQ.prototype.recvP">module ali-mqs.MQ.prototype.recvP</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ali-mqs.MQ.prototype.recvP.recvP">
+            function <span class="apidocSignatureSpan">ali-mqs.MQ.prototype.</span>recvP
+            <span class="apidocSignatureSpan">(waitSeconds)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ali-mqs.MQ.prototype.reserveP">module ali-mqs.MQ.prototype.reserveP</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ali-mqs.MQ.prototype.reserveP.reserveP">
+            function <span class="apidocSignatureSpan">ali-mqs.MQ.prototype.</span>reserveP
+            <span class="apidocSignatureSpan">(receiptHandle, reserveSeconds)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ali-mqs.MQ.prototype.sendP">module ali-mqs.MQ.prototype.sendP</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ali-mqs.MQ.prototype.sendP.sendP">
+            function <span class="apidocSignatureSpan">ali-mqs.MQ.prototype.</span>sendP
+            <span class="apidocSignatureSpan">(msg, priority, delaySeconds)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ali-mqs.MQ.prototype.setAttrsP">module ali-mqs.MQ.prototype.setAttrsP</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ali-mqs.MQ.prototype.setAttrsP.setAttrsP">
+            function <span class="apidocSignatureSpan">ali-mqs.MQ.prototype.</span>setAttrsP
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ali-mqs.MQ.prototype.utf8ToBase64">module ali-mqs.MQ.prototype.utf8ToBase64</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ali-mqs.MQ.prototype.utf8ToBase64.utf8ToBase64">
+            function <span class="apidocSignatureSpan">ali-mqs.MQ.prototype.</span>utf8ToBase64
+            <span class="apidocSignatureSpan">(src)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ali-mqs.MQS">module ali-mqs.MQS</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ali-mqs.MQS.MQS">
+            function <span class="apidocSignatureSpan">ali-mqs.</span>MQS
+            <span class="apidocSignatureSpan">(account, region)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ali-mqs.MQS.prototype">module ali-mqs.MQS.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ali-mqs.MQS.prototype.createP">
+            function <span class="apidocSignatureSpan">ali-mqs.MQS.prototype.</span>createP
+            <span class="apidocSignatureSpan">(name, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ali-mqs.MQS.prototype.deleteP">
+            function <span class="apidocSignatureSpan">ali-mqs.MQS.prototype.</span>deleteP
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ali-mqs.MQS.prototype.listP">
+            function <span class="apidocSignatureSpan">ali-mqs.MQS.prototype.</span>listP
+            <span class="apidocSignatureSpan">(prefix, pageSize, pageMarker)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ali-mqs.MQS.prototype.makeURL">
+            function <span class="apidocSignatureSpan">ali-mqs.MQS.prototype.</span>makeURL
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ali-mqs.MQS.prototype.createP">module ali-mqs.MQS.prototype.createP</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ali-mqs.MQS.prototype.createP.createP">
+            function <span class="apidocSignatureSpan">ali-mqs.MQS.prototype.</span>createP
+            <span class="apidocSignatureSpan">(name, options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ali-mqs.MQS.prototype.deleteP">module ali-mqs.MQS.prototype.deleteP</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ali-mqs.MQS.prototype.deleteP.deleteP">
+            function <span class="apidocSignatureSpan">ali-mqs.MQS.prototype.</span>deleteP
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ali-mqs.MQS.prototype.listP">module ali-mqs.MQS.prototype.listP</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ali-mqs.MQS.prototype.listP.listP">
+            function <span class="apidocSignatureSpan">ali-mqs.MQS.prototype.</span>listP
+            <span class="apidocSignatureSpan">(prefix, pageSize, pageMarker)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ali-mqs.MQS.prototype.makeURL">module ali-mqs.MQS.prototype.makeURL</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ali-mqs.MQS.prototype.makeURL.makeURL">
+            function <span class="apidocSignatureSpan">ali-mqs.MQS.prototype.</span>makeURL
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ali-mqs.OpenStack">module ali-mqs.OpenStack</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ali-mqs.OpenStack.OpenStack">
+            function <span class="apidocSignatureSpan">ali-mqs.</span>OpenStack
+            <span class="apidocSignatureSpan">(account)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ali-mqs.OpenStack.prototype">module ali-mqs.OpenStack.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ali-mqs.OpenStack.prototype.authorize">
+            function <span class="apidocSignatureSpan">ali-mqs.OpenStack.prototype.</span>authorize
+            <span class="apidocSignatureSpan">(httpVerb, mqsURI, mqsHeaders, contentType, contentMD5, tm)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ali-mqs.OpenStack.prototype.makeHeaders">
+            function <span class="apidocSignatureSpan">ali-mqs.OpenStack.prototype.</span>makeHeaders
+            <span class="apidocSignatureSpan">(mothod, url, headers, body)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ali-mqs.OpenStack.prototype.sendP">
+            function <span class="apidocSignatureSpan">ali-mqs.OpenStack.prototype.</span>sendP
+            <span class="apidocSignatureSpan">(method, url, body, headers)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ali-mqs.OpenStack.prototype.signature">
+            function <span class="apidocSignatureSpan">ali-mqs.OpenStack.prototype.</span>signature
+            <span class="apidocSignatureSpan">(httpVerb, mqsURI, mqsHeaders, contentType, contentMD5, tm)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ali-mqs.OpenStack.prototype.authorize">module ali-mqs.OpenStack.prototype.authorize</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ali-mqs.OpenStack.prototype.authorize.authorize">
+            function <span class="apidocSignatureSpan">ali-mqs.OpenStack.prototype.</span>authorize
+            <span class="apidocSignatureSpan">(httpVerb, mqsURI, mqsHeaders, contentType, contentMD5, tm)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ali-mqs.OpenStack.prototype.makeHeaders">module ali-mqs.OpenStack.prototype.makeHeaders</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ali-mqs.OpenStack.prototype.makeHeaders.makeHeaders">
+            function <span class="apidocSignatureSpan">ali-mqs.OpenStack.prototype.</span>makeHeaders
+            <span class="apidocSignatureSpan">(mothod, url, headers, body)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ali-mqs.OpenStack.prototype.sendP">module ali-mqs.OpenStack.prototype.sendP</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ali-mqs.OpenStack.prototype.sendP.sendP">
+            function <span class="apidocSignatureSpan">ali-mqs.OpenStack.prototype.</span>sendP
+            <span class="apidocSignatureSpan">(method, url, body, headers)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ali-mqs.OpenStack.prototype.signature">module ali-mqs.OpenStack.prototype.signature</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ali-mqs.OpenStack.prototype.signature.signature">
+            function <span class="apidocSignatureSpan">ali-mqs.OpenStack.prototype.</span>signature
+            <span class="apidocSignatureSpan">(httpVerb, mqsURI, mqsHeaders, contentType, contentMD5, tm)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ali-mqs" id="apidoc.module.ali-mqs">module ali-mqs</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ali-mqs.Account" id="apidoc.element.ali-mqs.Account">
+        function <span class="apidocSignatureSpan">ali-mqs.</span>Account
+        <span class="apidocSignatureSpan">(ownerId, keyId, keySecret)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Account(ownerId, keyId, keySecret) {
+    this._ownerId = ownerId;
+    this._keyId = keyId;
+    this._keySecret = keySecret;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+The new ali-mns is fully compatible with ali-mqs. Using ali-mns to instead of ali-mqs is recommended.
+
+# QuickStart
+Use 'npm install ali-mqs' to install the package.
+
+```javascript
+    var AliMQS = require("ali-mqs");
+    var account = new AliMQS.<span class="apidocCodeKeywordSpan">Account</span>("&lt;your-owner-id&gt;", "&lt;
+;your-key-id&gt;", "&lt;your-key-secret&gt;");
+    var mq = new AliMQS.MQ("&lt;your-mq-name&gt;", account, "hangzhou");
+    // send message
+    mq.sendP("Hello ali-mqs").then(console.log, console.error);
+```
+
+# Promised
+The ali-mqs use the [promise](https://www.npmjs.org/package/promise) pattern.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ali-mqs.Account.prototype.b64md5" id="apidoc.element.ali-mqs.Account.prototype.b64md5">
+        function <span class="apidocSignatureSpan">ali-mqs.</span>Account.prototype.b64md5
+        <span class="apidocSignatureSpan">(text)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Account.prototype.b64md5 = function (text) {
+    var cryptoMD5 = CryptoA.createHash("md5");
+    var md5HEX = cryptoMD5.update(text).digest("hex");
+    var buf = new Buffer.Buffer(md5HEX, "utf8");
+    return buf.toString("base64");
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ali-mqs.Account.prototype.getKeyId" id="apidoc.element.ali-mqs.Account.prototype.getKeyId">
+        function <span class="apidocSignatureSpan">ali-mqs.</span>Account.prototype.getKeyId
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Account.prototype.getKeyId = function () { return this._keyId; }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ali-mqs.Account.prototype.getOwnerId" id="apidoc.element.ali-mqs.Account.prototype.getOwnerId">
+        function <span class="apidocSignatureSpan">ali-mqs.</span>Account.prototype.getOwnerId
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Account.prototype.getOwnerId = function () { return this._ownerId; }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ali-mqs.Account.prototype.hmac_sha1" id="apidoc.element.ali-mqs.Account.prototype.hmac_sha1">
+        function <span class="apidocSignatureSpan">ali-mqs.</span>Account.prototype.hmac_sha1
+        <span class="apidocSignatureSpan">(text, encoding)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Account.prototype.hmac_sha1 = function (text, encoding) {
+    var hmacSHA1 = CryptoA.createHmac("sha1", this._keySecret);
+    return hmacSHA1.update(text).digest(encoding);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ali-mqs.MQ" id="apidoc.element.ali-mqs.MQ">
+        function <span class="apidocSignatureSpan">ali-mqs.</span>MQ
+        <span class="apidocSignatureSpan">(name, account, region)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function MQ(name, account, region) {
+    this._region = "hangzhou";
+    this._pattern = "http://%s.mqs-cn-%s.aliyuncs.com/%s";
+    this._signalSTOP = true;
+    this._evStopped = "AliMQS_MQ_NOTIFY_STOPPED";
+    // è¿žç»­timeoutè®¡æ•°å™¨
+    // åœ¨æŸç§æœªçŸ¥çš„åŽŸå›&nbsp;ä¸‹,ç½‘ç»œåº•å±‚é“¾æŽ¥æ–­äº†
+    // è¿™æ—¶åœ¨ç¨‹åºå†…éƒ¨çš„é‡è¯•æ—&nbsp;æ³•ä¿ƒä½¿ç½‘ç»œé‡è¿ž,ä»¥åŽçš„é‡è¯•éƒ½æ˜¯å¾’åŠ³çš„
+    // å¦‚æžœè¿žç»­å‘ç”Ÿåå¤é‡è¯•éƒ½ä¾ç„¶timeout,é‚£ä¹ˆæžæœ‰å¯èƒ½å·²ç»å‘ç”Ÿæ­¤ç§æƒ…å†µäº†
+    // è¿™æ—¶æŠ›å‡ºNetworkBrokenå¼‚å¸¸
+    this._timeoutCount = 0;
+    this._timeoutMax = 128;
+    this._name = name;
+    this._account = account;
+    if (region)
+        this._region = region;
+    // make url
+    this._urlAttr = this.makeAttrURL();
+    this._url = this.makeURL();
+    // create the OpenStack object
+    this._openStack = new AliMQS.OpenStack(account);
+    // emitter
+    this._emitter = new Events.EventEmitter();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+# QuickStart
+Use 'npm install ali-mqs' to install the package.
+
+```javascript
+    var AliMQS = require("ali-mqs");
+    var account = new AliMQS.Account("&lt;your-owner-id&gt;", "&lt;your-key-id&gt;", "&lt;your
+-key-secret&gt;");
+    var mq = new AliMQS.<span class="apidocCodeKeywordSpan">MQ</span>("&lt;your-mq-name&gt;", account, "hangzhou
+");
+    // send message
+    mq.sendP("Hello ali-mqs").then(console.log, console.error);
+```
+
+# Promised
+The ali-mqs use the [promise](https://www.npmjs.org/package/promise) pattern.
+Any functions suffix with 'P' indicate a promise object will be returned from it.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ali-mqs.MQ.prototype.base64ToUtf8" id="apidoc.element.ali-mqs.MQ.prototype.base64ToUtf8">
+        function <span class="apidocSignatureSpan">ali-mqs.</span>MQ.prototype.base64ToUtf8
+        <span class="apidocSignatureSpan">(src)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">MQ.prototype.base64ToUtf8 = function (src) {
+    var buf = new Buffer.Buffer(src, 'base64');
+    return buf.toString('utf8');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ali-mqs.MQ.prototype.deleteP" id="apidoc.element.ali-mqs.MQ.prototype.deleteP">
+        function <span class="apidocSignatureSpan">ali-mqs.</span>MQ.prototype.deleteP
+        <span class="apidocSignatureSpan">(receiptHandle)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">MQ.prototype.deleteP = function (receiptHandle) {
+    debug("DELETE " + this._url);
+    return this._openStack.sendP("DELETE", this._url + "?ReceiptHandle=" + receiptHandle);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ali-mqs.MQ.prototype.getAttrsP" id="apidoc.element.ali-mqs.MQ.prototype.getAttrsP">
+        function <span class="apidocSignatureSpan">ali-mqs.</span>MQ.prototype.getAttrsP
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">MQ.prototype.getAttrsP = function () {
+    debug("GET " + this._urlAttr);
+    return this._openStack.sendP("GET", this._urlAttr);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ali-mqs.MQ.prototype.makeAttrURL" id="apidoc.element.ali-mqs.MQ.prototype.makeAttrURL">
+        function <span class="apidocSignatureSpan">ali-mqs.</span>MQ.prototype.makeAttrURL
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">MQ.prototype.makeAttrURL = function () {
+    return Util.format(this._pattern, this._account.getOwnerId(), this._region, this._name);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ali-mqs.MQ.prototype.makeURL" id="apidoc.element.ali-mqs.MQ.prototype.makeURL">
+        function <span class="apidocSignatureSpan">ali-mqs.</span>MQ.prototype.makeURL
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">MQ.prototype.makeURL = function () {
+    return this.makeAttrURL() + "/messages";
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ali-mqs.MQ.prototype.notifyRecv" id="apidoc.element.ali-mqs.MQ.prototype.notifyRecv">
+        function <span class="apidocSignatureSpan">ali-mqs.</span>MQ.prototype.notifyRecv
+        <span class="apidocSignatureSpan">(cb, waitSeconds)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">MQ.prototype.notifyRecv = function (cb, waitSeconds) {
+    this._signalSTOP = false;
+    this._timeoutCount = 0;
+    this.notifyRecvInternal(cb, waitSeconds || 5);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ali-mqs.MQ.prototype.notifyRecvInternal" id="apidoc.element.ali-mqs.MQ.prototype.notifyRecvInternal">
+        function <span class="apidocSignatureSpan">ali-mqs.</span>MQ.prototype.notifyRecvInternal
+        <span class="apidocSignatureSpan">(cb, waitSeconds)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">MQ.prototype.notifyRecvInternal = function (cb, waitSeconds) {
+    var _this = this;
+    // This signal will be triggered by notifyStopP()
+    if (this._signalSTOP) {
+        debug("notifyStopped");
+        this._emitter.emit(this._evStopped);
+        return;
+    }
+    debug("notifyRecvInternal()");
+    try {
+        this.recvP(waitSeconds).done(function (dataRecv) {
+            try {
+                debug(dataRecv);
+                _this._timeoutCount = 0;
+                if (cb(null, dataRecv)) {
+                    _this.deleteP(dataRecv.Message.ReceiptHandle)
+                        .done(null, function (ex) {
+                        console.log(ex);
+                    });
+                }
+            }
+            catch (ex) {
+            }
+            _this.notifyRecvInternal(cb, waitSeconds);
+        }, function (ex) {
+            debug(ex);
+            if ((!ex.Error) || (ex.Error.Code !== "MessageNotExist")) {
+                cb(ex, null);
+            }
+            if (ex) {
+                if (ex.message === "timeout") {
+                    _this._timeoutCount++;
+                    if (_this._timeoutCount &gt; _this._timeoutMax) {
+                        // æžåº¦å¯èƒ½ç½‘ç»œåº•å±‚æ–­äº†
+                        cb(new Error("NetworkBroken"), null);
+                    }
+                }
+                else if (ex.Error &amp;&amp; ex.Error.Code === "MessageNotExist") {
+                    _this._timeoutCount = 0;
+                }
+            }
+            process.nextTick(function () {
+                _this.notifyRecvInternal(cb, waitSeconds);
+            });
+        });
+    }
+    catch (ex) {
+        // ignore any ex
+        console.log(ex.toString());
+        // è¿‡5ç§’é‡è¯•
+        debug("Retry after 5 seconds");
+        setTimeout(function () {
+            _this.notifyRecvInternal(cb, waitSeconds);
+        }, 5000);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ali-mqs.MQ.prototype.notifyStopP" id="apidoc.element.ali-mqs.MQ.prototype.notifyStopP">
+        function <span class="apidocSignatureSpan">ali-mqs.</span>MQ.prototype.notifyStopP
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">MQ.prototype.notifyStopP = function () {
+    var _this = this;
+    if (this._signalSTOP)
+        return Promise.resolve(this._evStopped);
+    this._signalSTOP = true;
+    return new Promise(function (resolve) {
+        _this._emitter.once(_this._evStopped, function () {
+            resolve(_this._evStopped);
+        });
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ali-mqs.MQ.prototype.peekP" id="apidoc.element.ali-mqs.MQ.prototype.peekP">
+        function <span class="apidocSignatureSpan">ali-mqs.</span>MQ.prototype.peekP
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">MQ.prototype.peekP = function () {
+    var _this = this;
+    debug("GET " + this._url);
+    return this._openStack.sendP("GET", this._url + "?peekonly=true").then(function (data) {
+        debug(data);
+        if (data &amp;&amp; data.Message &amp;&amp; data.Message.MessageBody) {
+            data.Message.MessageBody = _this.base64ToUtf8(data.Message.MessageBody);
+        }
+        return data;
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ali-mqs.MQ.prototype.recvP" id="apidoc.element.ali-mqs.MQ.prototype.recvP">
+        function <span class="apidocSignatureSpan">ali-mqs.</span>MQ.prototype.recvP
+        <span class="apidocSignatureSpan">(waitSeconds)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">MQ.prototype.recvP = function (waitSeconds) {
+    var _this = this;
+    var url = this._url;
+    if (waitSeconds)
+        url += "?waitseconds=" + waitSeconds;
+    debug("GET " + url);
+    return new Promise(function (resolve, reject) {
+        var bGotResponse = false;
+        // wait more 5 seconds to trigger timeout error
+        var timeOutSeconds = 5;
+        if (waitSeconds)
+            timeOutSeconds += waitSeconds;
+        setTimeout(function () {
+            if (!bGotResponse)
+                reject(new Error("timeout"));
+        }, 1000 * timeOutSeconds);
+        _this._openStack.sendP("GET", url).done(function (data) {
+            debug(data);
+            bGotResponse = true;
+            if (data &amp;&amp; data.Message &amp;&amp; data.Message.MessageBody) {
+                data.Message.MessageBody = _this.base64ToUtf8(data.Message.MessageBody);
+            }
+            resolve(data);
+        }, function (ex) {
+            debug(ex);
+            bGotResponse = true;
+            reject(ex);
+        });
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ali-mqs.MQ.prototype.reserveP" id="apidoc.element.ali-mqs.MQ.prototype.reserveP">
+        function <span class="apidocSignatureSpan">ali-mqs.</span>MQ.prototype.reserveP
+        <span class="apidocSignatureSpan">(receiptHandle, reserveSeconds)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">MQ.prototype.reserveP = function (receiptHandle, reserveSeconds) {
+    debug("PUT " + this._url);
+    return this._openStack.sendP("PUT", this._url
+        + "?ReceiptHandle=" + receiptHandle
+        + "&amp;VisibilityTimeout=" + reserveSeconds);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ali-mqs.MQ.prototype.sendP" id="apidoc.element.ali-mqs.MQ.prototype.sendP">
+        function <span class="apidocSignatureSpan">ali-mqs.</span>MQ.prototype.sendP
+        <span class="apidocSignatureSpan">(msg, priority, delaySeconds)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">MQ.prototype.sendP = function (msg, priority, delaySeconds) {
+    var b64 = this.utf8ToBase64(msg);
+    var body = { Message: { MessageBody: b64 } };
+    if (!isNaN(priority))
+        body.Message.Priority = priority;
+    if (!isNaN(delaySeconds))
+        body.Message.DelaySeconds = delaySeconds;
+    debug("PUT " + this._url, body);
+    return this._openStack.sendP("POST", this._url, body);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ali-mqs.MQ.prototype.setAttrsP" id="apidoc.element.ali-mqs.MQ.prototype.setAttrsP">
+        function <span class="apidocSignatureSpan">ali-mqs.</span>MQ.prototype.setAttrsP
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">MQ.prototype.setAttrsP = function (options) {
+    var body = { Queue: options };
+    debug("PUT " + this._urlAttr, body);
+    return this._openStack.sendP("PUT", this._urlAttr + "?metaoverride=true", body);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ali-mqs.MQ.prototype.utf8ToBase64" id="apidoc.element.ali-mqs.MQ.prototype.utf8ToBase64">
+        function <span class="apidocSignatureSpan">ali-mqs.</span>MQ.prototype.utf8ToBase64
+        <span class="apidocSignatureSpan">(src)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">MQ.prototype.utf8ToBase64 = function (src) {
+    var buf = new Buffer.Buffer(src, 'utf8');
+    return buf.toString('base64');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ali-mqs.MQS" id="apidoc.element.ali-mqs.MQS">
+        function <span class="apidocSignatureSpan">ali-mqs.</span>MQS
+        <span class="apidocSignatureSpan">(account, region)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function MQS(account, region) {
+    this._region = "hangzhou"; // region: hangzhou, beijing, qingdao
+    this._pattern = "http://%s.mqs-cn-%s.aliyuncs.com";
+    // save the input arguments
+    this._account = account;
+    if (region)
+        this._region = region;
+    // make url
+    this._url = this.makeURL();
+    // create the OpenStack object
+    this._openStack = new AliMQS.OpenStack(account);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+account: An account object.
+
+region: String, optional. It can be "hangzhou", "beijing" or "qingdao", the 3 data center that provide
+ mqs service.
+Default is "hangzhou". It can also be internal address "hangzhou-internal", "beijing-internal" or &amp;#
+x22;qingdao-internal".
+```javascript
+    var AliMQS = require("ali-mqs");
+    var account = new AliMQS.Account("&lt;your-owner-id&gt;", "&lt;your-key-id&gt;", "&lt;your
+-key-secret&gt;");
+    var mqs = new AliMQS.<span class="apidocCodeKeywordSpan">MQS</span>(account, "hangzhou");
+```
+
+## mqs.listP(prefix, pageSize, pageMarker)
+List all of the queue in a data center.
+
+prefix: String, optional. Return only mq with the prefix.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ali-mqs.MQS.prototype.createP" id="apidoc.element.ali-mqs.MQS.prototype.createP">
+        function <span class="apidocSignatureSpan">ali-mqs.</span>MQS.prototype.createP
+        <span class="apidocSignatureSpan">(name, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">MQS.prototype.createP = function (name, options) {
+    var body = { Queue: "" };
+    if (options)
+        body.Queue = options;
+    var url = Url.resolve(this._url, name);
+    return this._openStack.sendP("PUT", url, body);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ali-mqs.MQS.prototype.deleteP" id="apidoc.element.ali-mqs.MQS.prototype.deleteP">
+        function <span class="apidocSignatureSpan">ali-mqs.</span>MQS.prototype.deleteP
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">MQS.prototype.deleteP = function (name) {
+    var url = Url.resolve(this._url, name);
+    return this._openStack.sendP("DELETE", url);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ali-mqs.MQS.prototype.listP" id="apidoc.element.ali-mqs.MQS.prototype.listP">
+        function <span class="apidocSignatureSpan">ali-mqs.</span>MQS.prototype.listP
+        <span class="apidocSignatureSpan">(prefix, pageSize, pageMarker)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">MQS.prototype.listP = function (prefix, pageSize, pageMarker) {
+    var headers = {};
+    if (prefix)
+        headers["x-mqs-prefix"] = prefix;
+    if (pageMarker)
+        headers["x-mqs-marker"] = pageMarker;
+    if (pageSize)
+        headers["x-mqs-ret-number"] = pageSize;
+    return this._openStack.sendP("GET", this._url, null, headers);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ali-mqs.MQS.prototype.makeURL" id="apidoc.element.ali-mqs.MQS.prototype.makeURL">
+        function <span class="apidocSignatureSpan">ali-mqs.</span>MQS.prototype.makeURL
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">MQS.prototype.makeURL = function () {
+    return Util.format(this._pattern, this._account.getOwnerId(), this._region);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ali-mqs.OpenStack" id="apidoc.element.ali-mqs.OpenStack">
+        function <span class="apidocSignatureSpan">ali-mqs.</span>OpenStack
+        <span class="apidocSignatureSpan">(account)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function OpenStack(account) {
+    this._patternMQS = "MQS %s:%s";
+    this._patternSign = "%s\n%s\n%s\n%s\n%s%s";
+    this._contentType = "text/xml;charset=utf-8";
+    this._version = "2014-07-08";
+    this._account = account;
+    // xml builder
+    this._xmlBuilder = new Xml2js.Builder();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    this._account = account;
+    if (region)
+        this._region = region;
+    // make url
+    this._urlAttr = this.makeAttrURL();
+    this._url = this.makeURL();
+    // create the OpenStack object
+    this._openStack = new AliMQS.<span class="apidocCodeKeywordSpan">OpenStack</span>(account);
+    // emitter
+    this._emitter = new Events.EventEmitter();
+}
+// èŽ·å–MQçš„å±žæ€§å€¼
+MQ.prototype.getAttrsP = function () {
+    debug("GET " + this._urlAttr);
+    return this._openStack.sendP("GET", this._urlAttr);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ali-mqs.OpenStack.prototype.authorize" id="apidoc.element.ali-mqs.OpenStack.prototype.authorize">
+        function <span class="apidocSignatureSpan">ali-mqs.</span>OpenStack.prototype.authorize
+        <span class="apidocSignatureSpan">(httpVerb, mqsURI, mqsHeaders, contentType, contentMD5, tm)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">OpenStack.prototype.authorize = function (httpVerb, mqsURI, mqsHeaders, contentType, contentMD5, tm) {
+    return Util.format(this._patternMQS, this._account.getKeyId(), this.signature(httpVerb, mqsURI, mqsHeaders, contentType, contentMD5
+, tm));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ali-mqs.OpenStack.prototype.makeHeaders" id="apidoc.element.ali-mqs.OpenStack.prototype.makeHeaders">
+        function <span class="apidocSignatureSpan">ali-mqs.</span>OpenStack.prototype.makeHeaders
+        <span class="apidocSignatureSpan">(mothod, url, headers, body)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">OpenStack.prototype.makeHeaders = function (mothod, url, headers, body) {
+    // if not exist, create one
+    if (!headers)
+        headers = {};
+    var contentMD5 = "";
+    var contentType = "";
+    if (body) {
+        if (!headers["Content-Length"])
+            headers["Content-Length"] = body.length;
+        if (!headers["Content-Type"])
+            headers["Content-Type"] = this._contentType;
+        contentType = headers["Content-Type"];
+        contentMD5 = this._account.b64md5(body);
+        headers["Content-MD5"] = contentMD5;
+    }
+    if (!headers["x-mqs-version"])
+        headers["x-mqs-version"] = this._version;
+    // lowercase &amp; sort &amp; extract the x-mqs-&lt;any&gt;
+    var headsLower = {};
+    var keys = [];
+    for (var key in headers) {
+        if (headers.hasOwnProperty(key)) {
+            var lower = key.toLowerCase();
+            keys.push(lower);
+            headsLower[lower] = headers[key];
+        }
+    }
+    keys.sort();
+    var mqsHeaders = "";
+    for (var i in keys) {
+        var k = keys[i];
+        if (k.indexOf("x-mqs-") === 0) {
+            mqsHeaders += Util.format("%s:%s\n", k, headsLower[k]);
+        }
+    }
+    var tm = (new Date()).toUTCString();
+    var mqsURL = Url.parse(url);
+    headers.Date = tm;
+    headers.Authorization = this.authorize(mothod, mqsURL.path, mqsHeaders, contentType, contentMD5, tm);
+    headers.Host = mqsURL.host;
+    return headers;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ali-mqs.OpenStack.prototype.sendP" id="apidoc.element.ali-mqs.OpenStack.prototype.sendP">
+        function <span class="apidocSignatureSpan">ali-mqs.</span>OpenStack.prototype.sendP
+        <span class="apidocSignatureSpan">(method, url, body, headers)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">OpenStack.prototype.sendP = function (method, url, body, headers) {
+    var req = { method: method, url: url };
+    if (body)
+        req.body = this._xmlBuilder.buildObject(body);
+    req.headers = this.makeHeaders(method, url, headers, req.body);
+    return Request.requestP(req).then(function (response) {
+        // convert the body from xml to json
+        return Xml2js.parseStringP(response.body, { explicitArray: false })
+            .then(function (bodyJSON) {
+            response.bodyJSON = bodyJSON;
+            return response;
+        }, function () {
+            // cannot parse as xml
+            response.bodyJSON = response.body;
+            return response;
+        });
+    }).then(function (response) {
+        if (response.statusCode &lt; 400) {
+            if (response.bodyJSON)
+                return response.bodyJSON;
+            else
+                return response.statusCode;
+        }
+        else {
+            if (response.bodyJSON)
+                return Promise.reject(response.bodyJSON);
+            else
+                return Promise.reject(response.statusCode);
+        }
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ali-mqs.OpenStack.prototype.signature" id="apidoc.element.ali-mqs.OpenStack.prototype.signature">
+        function <span class="apidocSignatureSpan">ali-mqs.</span>OpenStack.prototype.signature
+        <span class="apidocSignatureSpan">(httpVerb, mqsURI, mqsHeaders, contentType, contentMD5, tm)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">OpenStack.prototype.signature = function (httpVerb, mqsURI, mqsHeaders, contentType, contentMD5, tm) {
+    var text = Util.format(this._patternSign, httpVerb, contentMD5, contentType, tm, mqsHeaders, mqsURI);
+    return this._account.hmac_sha1(text, "base64");
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ali-mqs.Account" id="apidoc.module.ali-mqs.Account">module ali-mqs.Account</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ali-mqs.Account.Account" id="apidoc.element.ali-mqs.Account.Account">
+        function <span class="apidocSignatureSpan">ali-mqs.</span>Account
+        <span class="apidocSignatureSpan">(ownerId, keyId, keySecret)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Account(ownerId, keyId, keySecret) {
+    this._ownerId = ownerId;
+    this._keyId = keyId;
+    this._keySecret = keySecret;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+The new ali-mns is fully compatible with ali-mqs. Using ali-mns to instead of ali-mqs is recommended.
+
+# QuickStart
+Use 'npm install ali-mqs' to install the package.
+
+```javascript
+    var AliMQS = require("ali-mqs");
+    var account = new AliMQS.<span class="apidocCodeKeywordSpan">Account</span>("&lt;your-owner-id&gt;", "&lt;
+;your-key-id&gt;", "&lt;your-key-secret&gt;");
+    var mq = new AliMQS.MQ("&lt;your-mq-name&gt;", account, "hangzhou");
+    // send message
+    mq.sendP("Hello ali-mqs").then(console.log, console.error);
+```
+
+# Promised
+The ali-mqs use the [promise](https://www.npmjs.org/package/promise) pattern.
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ali-mqs.Account.prototype" id="apidoc.module.ali-mqs.Account.prototype">module ali-mqs.Account.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ali-mqs.Account.prototype.b64md5" id="apidoc.element.ali-mqs.Account.prototype.b64md5">
+        function <span class="apidocSignatureSpan">ali-mqs.Account.prototype.</span>b64md5
+        <span class="apidocSignatureSpan">(text)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">b64md5 = function (text) {
+    var cryptoMD5 = CryptoA.createHash("md5");
+    var md5HEX = cryptoMD5.update(text).digest("hex");
+    var buf = new Buffer.Buffer(md5HEX, "utf8");
+    return buf.toString("base64");
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var contentType = "";
+if (body) {
+    if (!headers["Content-Length"])
+        headers["Content-Length"] = body.length;
+    if (!headers["Content-Type"])
+        headers["Content-Type"] = this._contentType;
+    contentType = headers["Content-Type"];
+    contentMD5 = this._account.<span class="apidocCodeKeywordSpan">b64md5</span>(body);
+    headers["Content-MD5"] = contentMD5;
+}
+if (!headers["x-mqs-version"])
+    headers["x-mqs-version"] = this._version;
+// lowercase &amp; sort &amp; extract the x-mqs-&lt;any&gt;
+var headsLower = {};
+var keys = [];
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ali-mqs.Account.prototype.getKeyId" id="apidoc.element.ali-mqs.Account.prototype.getKeyId">
+        function <span class="apidocSignatureSpan">ali-mqs.Account.prototype.</span>getKeyId
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getKeyId = function () { return this._keyId; }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    var account = new AliMQS.Account("&lt;your-owner-id&gt;", "&lt;your-key-id&gt;", "&lt;your
+-key-secret&gt;");
+```
+The account object is usually passed as an argument for other class such as *MQS*, *MQ*
+
+## account.getOwnerId()
+Return the ali owner id.
+
+## account.<span class="apidocCodeKeywordSpan">getKeyId</span>()
+Return the ali key id.
+
+## MQS(account, region)
+The *MQS* operate the mqs queue.
+
+account: An account object.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ali-mqs.Account.prototype.getOwnerId" id="apidoc.element.ali-mqs.Account.prototype.getOwnerId">
+        function <span class="apidocSignatureSpan">ali-mqs.Account.prototype.</span>getOwnerId
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getOwnerId = function () { return this._ownerId; }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+keySecret: String, ali key secret.
+```javascript
+    var AliMQS = require("ali-mqs");
+    var account = new AliMQS.Account("&lt;your-owner-id&gt;", "&lt;your-key-id&gt;", "&lt;your
+-key-secret&gt;");
+```
+The account object is usually passed as an argument for other class such as *MQS*, *MQ*
+
+## account.<span class="apidocCodeKeywordSpan">getOwnerId</span>()
+Return the ali owner id.
+
+## account.getKeyId()
+Return the ali key id.
+
+## MQS(account, region)
+The *MQS* operate the mqs queue.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ali-mqs.Account.prototype.hmac_sha1" id="apidoc.element.ali-mqs.Account.prototype.hmac_sha1">
+        function <span class="apidocSignatureSpan">ali-mqs.Account.prototype.</span>hmac_sha1
+        <span class="apidocSignatureSpan">(text, encoding)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">hmac_sha1 = function (text, encoding) {
+    var hmacSHA1 = CryptoA.createHmac("sha1", this._keySecret);
+    return hmacSHA1.update(text).digest(encoding);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        // ali mqs authorize header
+        OpenStack.prototype.authorize = function (httpVerb, mqsURI, mqsHeaders, contentType, contentMD5, tm) {
+            return Util.format(this._patternMQS, this._account.getKeyId(), this.signature(httpVerb, mqsURI, mqsHeaders, contentType
+, contentMD5, tm));
+        };
+        // ali mqs signature
+        OpenStack.prototype.signature = function (httpVerb, mqsURI, mqsHeaders, contentType, contentMD5, tm) {
+            var text = Util.format(this._patternSign, httpVerb, contentMD5, contentType, tm, mqsHeaders, mqsURI);
+            return this._account.<span class="apidocCodeKeywordSpan">hmac_sha1</span>(text, "base64");
+        };
+        return OpenStack;
+    })();
+    AliMQS.OpenStack = OpenStack;
+})(AliMQS || (AliMQS = {}));
+/// &lt;reference path="../dts/external.d.ts" /&gt;
+// Exports the AliMQS
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ali-mqs.Account.prototype.b64md5" id="apidoc.module.ali-mqs.Account.prototype.b64md5">module ali-mqs.Account.prototype.b64md5</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ali-mqs.Account.prototype.b64md5.b64md5" id="apidoc.element.ali-mqs.Account.prototype.b64md5.b64md5">
+        function <span class="apidocSignatureSpan">ali-mqs.Account.prototype.</span>b64md5
+        <span class="apidocSignatureSpan">(text)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">b64md5 = function (text) {
+    var cryptoMD5 = CryptoA.createHash("md5");
+    var md5HEX = cryptoMD5.update(text).digest("hex");
+    var buf = new Buffer.Buffer(md5HEX, "utf8");
+    return buf.toString("base64");
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var contentType = "";
+if (body) {
+    if (!headers["Content-Length"])
+        headers["Content-Length"] = body.length;
+    if (!headers["Content-Type"])
+        headers["Content-Type"] = this._contentType;
+    contentType = headers["Content-Type"];
+    contentMD5 = this._account.<span class="apidocCodeKeywordSpan">b64md5</span>(body);
+    headers["Content-MD5"] = contentMD5;
+}
+if (!headers["x-mqs-version"])
+    headers["x-mqs-version"] = this._version;
+// lowercase &amp; sort &amp; extract the x-mqs-&lt;any&gt;
+var headsLower = {};
+var keys = [];
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ali-mqs.Account.prototype.getKeyId" id="apidoc.module.ali-mqs.Account.prototype.getKeyId">module ali-mqs.Account.prototype.getKeyId</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ali-mqs.Account.prototype.getKeyId.getKeyId" id="apidoc.element.ali-mqs.Account.prototype.getKeyId.getKeyId">
+        function <span class="apidocSignatureSpan">ali-mqs.Account.prototype.</span>getKeyId
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getKeyId = function () { return this._keyId; }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    var account = new AliMQS.Account("&lt;your-owner-id&gt;", "&lt;your-key-id&gt;", "&lt;your
+-key-secret&gt;");
+```
+The account object is usually passed as an argument for other class such as *MQS*, *MQ*
+
+## account.getOwnerId()
+Return the ali owner id.
+
+## account.<span class="apidocCodeKeywordSpan">getKeyId</span>()
+Return the ali key id.
+
+## MQS(account, region)
+The *MQS* operate the mqs queue.
+
+account: An account object.
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ali-mqs.Account.prototype.getOwnerId" id="apidoc.module.ali-mqs.Account.prototype.getOwnerId">module ali-mqs.Account.prototype.getOwnerId</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ali-mqs.Account.prototype.getOwnerId.getOwnerId" id="apidoc.element.ali-mqs.Account.prototype.getOwnerId.getOwnerId">
+        function <span class="apidocSignatureSpan">ali-mqs.Account.prototype.</span>getOwnerId
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getOwnerId = function () { return this._ownerId; }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+keySecret: String, ali key secret.
+```javascript
+    var AliMQS = require("ali-mqs");
+    var account = new AliMQS.Account("&lt;your-owner-id&gt;", "&lt;your-key-id&gt;", "&lt;your
+-key-secret&gt;");
+```
+The account object is usually passed as an argument for other class such as *MQS*, *MQ*
+
+## account.<span class="apidocCodeKeywordSpan">getOwnerId</span>()
+Return the ali owner id.
+
+## account.getKeyId()
+Return the ali key id.
+
+## MQS(account, region)
+The *MQS* operate the mqs queue.
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ali-mqs.Account.prototype.hmac_sha1" id="apidoc.module.ali-mqs.Account.prototype.hmac_sha1">module ali-mqs.Account.prototype.hmac_sha1</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ali-mqs.Account.prototype.hmac_sha1.hmac_sha1" id="apidoc.element.ali-mqs.Account.prototype.hmac_sha1.hmac_sha1">
+        function <span class="apidocSignatureSpan">ali-mqs.Account.prototype.</span>hmac_sha1
+        <span class="apidocSignatureSpan">(text, encoding)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">hmac_sha1 = function (text, encoding) {
+    var hmacSHA1 = CryptoA.createHmac("sha1", this._keySecret);
+    return hmacSHA1.update(text).digest(encoding);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        // ali mqs authorize header
+        OpenStack.prototype.authorize = function (httpVerb, mqsURI, mqsHeaders, contentType, contentMD5, tm) {
+            return Util.format(this._patternMQS, this._account.getKeyId(), this.signature(httpVerb, mqsURI, mqsHeaders, contentType
+, contentMD5, tm));
+        };
+        // ali mqs signature
+        OpenStack.prototype.signature = function (httpVerb, mqsURI, mqsHeaders, contentType, contentMD5, tm) {
+            var text = Util.format(this._patternSign, httpVerb, contentMD5, contentType, tm, mqsHeaders, mqsURI);
+            return this._account.<span class="apidocCodeKeywordSpan">hmac_sha1</span>(text, "base64");
+        };
+        return OpenStack;
+    })();
+    AliMQS.OpenStack = OpenStack;
+})(AliMQS || (AliMQS = {}));
+/// &lt;reference path="../dts/external.d.ts" /&gt;
+// Exports the AliMQS
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ali-mqs.MQ" id="apidoc.module.ali-mqs.MQ">module ali-mqs.MQ</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ali-mqs.MQ.MQ" id="apidoc.element.ali-mqs.MQ.MQ">
+        function <span class="apidocSignatureSpan">ali-mqs.</span>MQ
+        <span class="apidocSignatureSpan">(name, account, region)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function MQ(name, account, region) {
+    this._region = "hangzhou";
+    this._pattern = "http://%s.mqs-cn-%s.aliyuncs.com/%s";
+    this._signalSTOP = true;
+    this._evStopped = "AliMQS_MQ_NOTIFY_STOPPED";
+    // è¿žç»­timeoutè®¡æ•°å™¨
+    // åœ¨æŸç§æœªçŸ¥çš„åŽŸå›&nbsp;ä¸‹,ç½‘ç»œåº•å±‚é“¾æŽ¥æ–­äº†
+    // è¿™æ—¶åœ¨ç¨‹åºå†…éƒ¨çš„é‡è¯•æ—&nbsp;æ³•ä¿ƒä½¿ç½‘ç»œé‡è¿ž,ä»¥åŽçš„é‡è¯•éƒ½æ˜¯å¾’åŠ³çš„
+    // å¦‚æžœè¿žç»­å‘ç”Ÿåå¤é‡è¯•éƒ½ä¾ç„¶timeout,é‚£ä¹ˆæžæœ‰å¯èƒ½å·²ç»å‘ç”Ÿæ­¤ç§æƒ…å†µäº†
+    // è¿™æ—¶æŠ›å‡ºNetworkBrokenå¼‚å¸¸
+    this._timeoutCount = 0;
+    this._timeoutMax = 128;
+    this._name = name;
+    this._account = account;
+    if (region)
+        this._region = region;
+    // make url
+    this._urlAttr = this.makeAttrURL();
+    this._url = this.makeURL();
+    // create the OpenStack object
+    this._openStack = new AliMQS.OpenStack(account);
+    // emitter
+    this._emitter = new Events.EventEmitter();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+# QuickStart
+Use 'npm install ali-mqs' to install the package.
+
+```javascript
+    var AliMQS = require("ali-mqs");
+    var account = new AliMQS.Account("&lt;your-owner-id&gt;", "&lt;your-key-id&gt;", "&lt;your
+-key-secret&gt;");
+    var mq = new AliMQS.<span class="apidocCodeKeywordSpan">MQ</span>("&lt;your-mq-name&gt;", account, "hangzhou
+");
+    // send message
+    mq.sendP("Hello ali-mqs").then(console.log, console.error);
+```
+
+# Promised
+The ali-mqs use the [promise](https://www.npmjs.org/package/promise) pattern.
+Any functions suffix with 'P' indicate a promise object will be returned from it.
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ali-mqs.MQ.prototype" id="apidoc.module.ali-mqs.MQ.prototype">module ali-mqs.MQ.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ali-mqs.MQ.prototype.base64ToUtf8" id="apidoc.element.ali-mqs.MQ.prototype.base64ToUtf8">
+        function <span class="apidocSignatureSpan">ali-mqs.MQ.prototype.</span>base64ToUtf8
+        <span class="apidocSignatureSpan">(src)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">base64ToUtf8 = function (src) {
+    var buf = new Buffer.Buffer(src, 'base64');
+    return buf.toString('utf8');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    if (!bGotResponse)
+        reject(new Error("timeout"));
+}, 1000 * timeOutSeconds);
+_this._openStack.sendP("GET", url).done(function (data) {
+    debug(data);
+    bGotResponse = true;
+    if (data &amp;&amp; data.Message &amp;&amp; data.Message.MessageBody) {
+        data.Message.MessageBody = _this.<span class="apidocCodeKeywordSpan">base64ToUtf8</span>(data.Message.MessageBody);
+    }
+    resolve(data);
+}, function (ex) {
+    debug(ex);
+    bGotResponse = true;
+    reject(ex);
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ali-mqs.MQ.prototype.deleteP" id="apidoc.element.ali-mqs.MQ.prototype.deleteP">
+        function <span class="apidocSignatureSpan">ali-mqs.MQ.prototype.</span>deleteP
+        <span class="apidocSignatureSpan">(receiptHandle)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">deleteP = function (receiptHandle) {
+    debug("DELETE " + this._url);
+    return this._openStack.sendP("DELETE", this._url + "?ReceiptHandle=" + receiptHandle);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        VisibilityTimeout: 30,
+        PollingWaitSeconds: 0
+    }).then(console.log, console.error);
+```
+If a mq with same name exists, calling createP will succeed only when all of the mq attributes are all same.
+Any mismatched attributes will cause an "QueueAlreadyExist" failure.
+
+## mqs.<span class="apidocCodeKeywordSpan">deleteP</span>(name)
+Delete an mq.
+
+name: String. The queue name.
+```javascript
+    mqs.deleteP("myAliMQ").then(console.log, console.error);;
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ali-mqs.MQ.prototype.getAttrsP" id="apidoc.element.ali-mqs.MQ.prototype.getAttrsP">
+        function <span class="apidocSignatureSpan">ali-mqs.MQ.prototype.</span>getAttrsP
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getAttrsP = function () {
+    debug("GET " + this._urlAttr);
+    return this._openStack.sendP("GET", this._urlAttr);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+## mq.notifyStopP()
+Stop mq.notifyRecv working. The promise object returned will not be resolved until the receiving loop stopped actually.
+The max time wait for notifyRecv() stop is determined by waitSeconds passed to mq.notifyRecv.
+```javascript
+    mq.notifyStopP().then(console.log, console.error);
+```
+
+## mq.<span class="apidocCodeKeywordSpan">getAttrsP</span>()
+Get the attributes of the mq.
+
+    mq.getAttrsP().then(console.log, console.error);
+
+## mq.setAttrsP(options)
+Modify the attributes of mq.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ali-mqs.MQ.prototype.makeAttrURL" id="apidoc.element.ali-mqs.MQ.prototype.makeAttrURL">
+        function <span class="apidocSignatureSpan">ali-mqs.MQ.prototype.</span>makeAttrURL
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">makeAttrURL = function () {
+    return Util.format(this._pattern, this._account.getOwnerId(), this._region, this._name);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    this._timeoutCount = 0;
+    this._timeoutMax = 128;
+    this._name = name;
+    this._account = account;
+    if (region)
+        this._region = region;
+    // make url
+    this._urlAttr = this.<span class="apidocCodeKeywordSpan">makeAttrURL</span>();
+    this._url = this.makeURL();
+    // create the OpenStack object
+    this._openStack = new AliMQS.OpenStack(account);
+    // emitter
+    this._emitter = new Events.EventEmitter();
+}
+// èŽ·å–MQçš„å±žæ€§å€¼
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ali-mqs.MQ.prototype.makeURL" id="apidoc.element.ali-mqs.MQ.prototype.makeURL">
+        function <span class="apidocSignatureSpan">ali-mqs.MQ.prototype.</span>makeURL
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">makeURL = function () {
+    return this.makeAttrURL() + "/messages";
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    this._timeoutMax = 128;
+    this._name = name;
+    this._account = account;
+    if (region)
+        this._region = region;
+    // make url
+    this._urlAttr = this.makeAttrURL();
+    this._url = this.<span class="apidocCodeKeywordSpan">makeURL</span>();
+    // create the OpenStack object
+    this._openStack = new AliMQS.OpenStack(account);
+    // emitter
+    this._emitter = new Events.EventEmitter();
+}
+// èŽ·å–MQçš„å±žæ€§å€¼
+MQ.prototype.getAttrsP = function () {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ali-mqs.MQ.prototype.notifyRecv" id="apidoc.element.ali-mqs.MQ.prototype.notifyRecv">
+        function <span class="apidocSignatureSpan">ali-mqs.MQ.prototype.</span>notifyRecv
+        <span class="apidocSignatureSpan">(cb, waitSeconds)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">notifyRecv = function (cb, waitSeconds) {
+    this._signalSTOP = false;
+    this._timeoutCount = 0;
+    this.notifyRecvInternal(cb, waitSeconds || 5);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```
+If you need more time to process the message after received, you can reserve it for a longer time.
+The message will continue to keep invisible for reserveSeconds from now.
+Set a shorter time is also possible.
+If succeed, a new receiptHandle will be returned to replace the old one, further mq.deleteP or mq.reserveP should use the newer.
+And the newer receiptHandle will expired after reserveSeconds past.
+
+## mq.<span class="apidocCodeKeywordSpan">notifyRecv</span>(callback, waitSeconds)
+Register a callback function to receive messages.
+
+callback: The callback function will be called once for each received message.
+And if the callback function return *true*, the message received will be delete automatically,
+while you should delete the message manually, if return *false*.
+
+waitSeconds: number, optional. 1~30. The max seconds to wait in a polling loop, default is 5.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ali-mqs.MQ.prototype.notifyRecvInternal" id="apidoc.element.ali-mqs.MQ.prototype.notifyRecvInternal">
+        function <span class="apidocSignatureSpan">ali-mqs.MQ.prototype.</span>notifyRecvInternal
+        <span class="apidocSignatureSpan">(cb, waitSeconds)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">notifyRecvInternal = function (cb, waitSeconds) {
+    var _this = this;
+    // This signal will be triggered by notifyStopP()
+    if (this._signalSTOP) {
+        debug("notifyStopped");
+        this._emitter.emit(this._evStopped);
+        return;
+    }
+    debug("notifyRecvInternal()");
+    try {
+        this.recvP(waitSeconds).done(function (dataRecv) {
+            try {
+                debug(dataRecv);
+                _this._timeoutCount = 0;
+                if (cb(null, dataRecv)) {
+                    _this.deleteP(dataRecv.Message.ReceiptHandle)
+                        .done(null, function (ex) {
+                        console.log(ex);
+                    });
+                }
+            }
+            catch (ex) {
+            }
+            _this.notifyRecvInternal(cb, waitSeconds);
+        }, function (ex) {
+            debug(ex);
+            if ((!ex.Error) || (ex.Error.Code !== "MessageNotExist")) {
+                cb(ex, null);
+            }
+            if (ex) {
+                if (ex.message === "timeout") {
+                    _this._timeoutCount++;
+                    if (_this._timeoutCount &gt; _this._timeoutMax) {
+                        // æžåº¦å¯èƒ½ç½‘ç»œåº•å±‚æ–­äº†
+                        cb(new Error("NetworkBroken"), null);
+                    }
+                }
+                else if (ex.Error &amp;&amp; ex.Error.Code === "MessageNotExist") {
+                    _this._timeoutCount = 0;
+                }
+            }
+            process.nextTick(function () {
+                _this.notifyRecvInternal(cb, waitSeconds);
+            });
+        });
+    }
+    catch (ex) {
+        // ignore any ex
+        console.log(ex.toString());
+        // è¿‡5ç§’é‡è¯•
+        debug("Retry after 5 seconds");
+        setTimeout(function () {
+            _this.notifyRecvInternal(cb, waitSeconds);
+        }, 5000);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        + "&amp;VisibilityTimeout=" + reserveSeconds);
+};
+// æ¶ˆæ¯é€šçŸ¥.æ¯å½“æœ‰æ¶ˆæ¯æ”¶åˆ°æ—¶,éƒ½è°ƒç”¨cbå›žè°ƒå‡½æ•°
+// å¦‚æžœcbè¿”å›žtrue,é‚£ä¹ˆå°†åˆ&nbsp;é™¤æ¶ˆæ¯,å¦åˆ™ä¿ç•™æ¶ˆæ¯
+MQ.prototype.notifyRecv = function (cb, waitSeconds) {
+    this._signalSTOP = false;
+    this._timeoutCount = 0;
+    this.<span class="apidocCodeKeywordSpan">notifyRecvInternal</span>(cb, waitSeconds || 5);
+};
+MQ.prototype.notifyRecvInternal = function (cb, waitSeconds) {
+    var _this = this;
+    // This signal will be triggered by notifyStopP()
+    if (this._signalSTOP) {
+        debug("notifyStopped");
+        this._emitter.emit(this._evStopped);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ali-mqs.MQ.prototype.notifyStopP" id="apidoc.element.ali-mqs.MQ.prototype.notifyStopP">
+        function <span class="apidocSignatureSpan">ali-mqs.MQ.prototype.</span>notifyStopP
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">notifyStopP = function () {
+    var _this = this;
+    if (this._signalSTOP)
+        return Promise.resolve(this._evStopped);
+    this._signalSTOP = true;
+    return new Promise(function (resolve) {
+        _this._emitter.once(_this._evStopped, function () {
+            resolve(_this._evStopped);
+        });
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        return true; // this will cause message to be deleted automatically
+    });
+```
+
+Both callback functions will work if you call notifyRecv twice for 2 different callback functions.
+But each received message only will trigger one of them only.
+
+## mq.<span class="apidocCodeKeywordSpan">notifyStopP</span>()
+Stop mq.notifyRecv working. The promise object returned will not be resolved until the receiving loop stopped actually.
+The max time wait for notifyRecv() stop is determined by waitSeconds passed to mq.notifyRecv.
+```javascript
+    mq.notifyStopP().then(console.log, console.error);
+```
+
+## mq.getAttrsP()
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ali-mqs.MQ.prototype.peekP" id="apidoc.element.ali-mqs.MQ.prototype.peekP">
+        function <span class="apidocSignatureSpan">ali-mqs.MQ.prototype.</span>peekP
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">peekP = function () {
+    var _this = this;
+    debug("GET " + this._url);
+    return this._openStack.sendP("GET", this._url + "?peekonly=true").then(function (data) {
+        debug(data);
+        if (data &amp;&amp; data.Message &amp;&amp; data.Message.MessageBody) {
+            data.Message.MessageBody = _this.base64ToUtf8(data.Message.MessageBody);
+        }
+        return data;
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+waitSeconds: number. optional.
+The max seconds to wait if queue is empty, after that an error *MessageNotExist* will be returned.
+```javascript
+    mq.recvP(5).then(console.log, console.error);
+```
+
+## mq.<span class="apidocCodeKeywordSpan">peekP</span>()
+Peek a message.
+This will not change the message to invisible.
+```javascript
+    mq.peekP(5).then(console.log, console.error);
+```
+
+## mq.deleteP(receiptHandle)
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ali-mqs.MQ.prototype.recvP" id="apidoc.element.ali-mqs.MQ.prototype.recvP">
+        function <span class="apidocSignatureSpan">ali-mqs.MQ.prototype.</span>recvP
+        <span class="apidocSignatureSpan">(waitSeconds)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">recvP = function (waitSeconds) {
+    var _this = this;
+    var url = this._url;
+    if (waitSeconds)
+        url += "?waitseconds=" + waitSeconds;
+    debug("GET " + url);
+    return new Promise(function (resolve, reject) {
+        var bGotResponse = false;
+        // wait more 5 seconds to trigger timeout error
+        var timeOutSeconds = 5;
+        if (waitSeconds)
+            timeOutSeconds += waitSeconds;
+        setTimeout(function () {
+            if (!bGotResponse)
+                reject(new Error("timeout"));
+        }, 1000 * timeOutSeconds);
+        _this._openStack.sendP("GET", url).done(function (data) {
+            debug(data);
+            bGotResponse = true;
+            if (data &amp;&amp; data.Message &amp;&amp; data.Message.MessageBody) {
+                data.Message.MessageBody = _this.base64ToUtf8(data.Message.MessageBody);
+            }
+            resolve(data);
+        }, function (ex) {
+            debug(ex);
+            bGotResponse = true;
+            reject(ex);
+        });
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+delaySeconds: number, optional. How many seconds will the messages be visible after sent. 0~604800(7days), default is 0.
+This argument is prior to the options.DelaySeconds in attributes of message queue.
+```javascript
+mq.sendP("Hello Ali-MQS", 8, 0).then(console.log, console.error);
+```
+
+## mq.<span class="apidocCodeKeywordSpan">recvP</span>(waitSeconds)
+Receive a message from queue.
+This will change the message to invisible for a while.
+
+waitSeconds: number. optional.
+The max seconds to wait if queue is empty, after that an error *MessageNotExist* will be returned.
+```javascript
+mq.recvP(5).then(console.log, console.error);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ali-mqs.MQ.prototype.reserveP" id="apidoc.element.ali-mqs.MQ.prototype.reserveP">
+        function <span class="apidocSignatureSpan">ali-mqs.MQ.prototype.</span>reserveP
+        <span class="apidocSignatureSpan">(receiptHandle, reserveSeconds)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">reserveP = function (receiptHandle, reserveSeconds) {
+    debug("PUT " + this._url);
+    return this._openStack.sendP("PUT", this._url
+        + "?ReceiptHandle=" + receiptHandle
+        + "&amp;VisibilityTimeout=" + reserveSeconds);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+receiptHandle: String. Return by mq.recvP or mq.notifyRecv.
+```javascript
+mq.recvP(5).then(function(data){
+    return mq.deleteP(data.Message.ReceiptHandle);
+}).then(console.log, console.error);
+```
+
+## mq.<span class="apidocCodeKeywordSpan">reserveP</span>(receiptHandle, reserveSeconds)
+Reserve a received message.
+
+receiptHandle: String. Return by mq.recvP or mq.notifyRecv.
+
+reserveSeconds: number. How long will the message be reserved, in seconds. 1~43200(12hours).
+```javascript
+mq.recvP().then(function(data){
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ali-mqs.MQ.prototype.sendP" id="apidoc.element.ali-mqs.MQ.prototype.sendP">
+        function <span class="apidocSignatureSpan">ali-mqs.MQ.prototype.</span>sendP
+        <span class="apidocSignatureSpan">(msg, priority, delaySeconds)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sendP = function (msg, priority, delaySeconds) {
+    var b64 = this.utf8ToBase64(msg);
+    var body = { Message: { MessageBody: b64 } };
+    if (!isNaN(priority))
+        body.Message.Priority = priority;
+    if (!isNaN(delaySeconds))
+        body.Message.DelaySeconds = delaySeconds;
+    debug("PUT " + this._url, body);
+    return this._openStack.sendP("POST", this._url, body);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Use 'npm install ali-mqs' to install the package.
+
+```javascript
+    var AliMQS = require("ali-mqs");
+    var account = new AliMQS.Account("&lt;your-owner-id&gt;", "&lt;your-key-id&gt;", "&lt;your
+-key-secret&gt;");
+    var mq = new AliMQS.MQ("&lt;your-mq-name&gt;", account, "hangzhou");
+    // send message
+    mq.<span class="apidocCodeKeywordSpan">sendP</span>("Hello ali-mqs").then(console.log, console.error);
+```
+
+# Promised
+The ali-mqs use the [promise](https://www.npmjs.org/package/promise) pattern.
+Any functions suffix with 'P' indicate a promise object will be returned from it.
+
+# Typescript
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ali-mqs.MQ.prototype.setAttrsP" id="apidoc.element.ali-mqs.MQ.prototype.setAttrsP">
+        function <span class="apidocSignatureSpan">ali-mqs.MQ.prototype.</span>setAttrsP
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setAttrsP = function (options) {
+    var body = { Queue: options };
+    debug("PUT " + this._urlAttr, body);
+    return this._openStack.sendP("PUT", this._urlAttr + "?metaoverride=true", body);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```
+
+## mq.getAttrsP()
+Get the attributes of the mq.
+
+mq.getAttrsP().then(console.log, console.error);
+
+## mq.<span class="apidocCodeKeywordSpan">setAttrsP</span>(options)
+Modify the attributes of mq.
+
+options: the queue attributes. See the [options](#options) of mqs.createP.
+```javascript
+mq.setAttrsP({
+    DelaySeconds: 0,
+    MaximumMessageSize: 65536,
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ali-mqs.MQ.prototype.utf8ToBase64" id="apidoc.element.ali-mqs.MQ.prototype.utf8ToBase64">
+        function <span class="apidocSignatureSpan">ali-mqs.MQ.prototype.</span>utf8ToBase64
+        <span class="apidocSignatureSpan">(src)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">utf8ToBase64 = function (src) {
+    var buf = new Buffer.Buffer(src, 'utf8');
+    return buf.toString('base64');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+MQ.prototype.setAttrsP = function (options) {
+    var body = { Queue: options };
+    debug("PUT " + this._urlAttr, body);
+    return this._openStack.sendP("PUT", this._urlAttr + "?metaoverride=true", body);
+};
+// å‘é€æ¶ˆæ¯
+MQ.prototype.sendP = function (msg, priority, delaySeconds) {
+    var b64 = this.<span class="apidocCodeKeywordSpan">utf8ToBase64</span>(msg);
+    var body = { Message: { MessageBody: b64 } };
+    if (!isNaN(priority))
+        body.Message.Priority = priority;
+    if (!isNaN(delaySeconds))
+        body.Message.DelaySeconds = delaySeconds;
+    debug("PUT " + this._url, body);
+    return this._openStack.sendP("POST", this._url, body);
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ali-mqs.MQ.prototype.base64ToUtf8" id="apidoc.module.ali-mqs.MQ.prototype.base64ToUtf8">module ali-mqs.MQ.prototype.base64ToUtf8</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ali-mqs.MQ.prototype.base64ToUtf8.base64ToUtf8" id="apidoc.element.ali-mqs.MQ.prototype.base64ToUtf8.base64ToUtf8">
+        function <span class="apidocSignatureSpan">ali-mqs.MQ.prototype.</span>base64ToUtf8
+        <span class="apidocSignatureSpan">(src)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">base64ToUtf8 = function (src) {
+    var buf = new Buffer.Buffer(src, 'base64');
+    return buf.toString('utf8');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    if (!bGotResponse)
+        reject(new Error("timeout"));
+}, 1000 * timeOutSeconds);
+_this._openStack.sendP("GET", url).done(function (data) {
+    debug(data);
+    bGotResponse = true;
+    if (data &amp;&amp; data.Message &amp;&amp; data.Message.MessageBody) {
+        data.Message.MessageBody = _this.<span class="apidocCodeKeywordSpan">base64ToUtf8</span>(data.Message.MessageBody);
+    }
+    resolve(data);
+}, function (ex) {
+    debug(ex);
+    bGotResponse = true;
+    reject(ex);
+});
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ali-mqs.MQ.prototype.deleteP" id="apidoc.module.ali-mqs.MQ.prototype.deleteP">module ali-mqs.MQ.prototype.deleteP</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ali-mqs.MQ.prototype.deleteP.deleteP" id="apidoc.element.ali-mqs.MQ.prototype.deleteP.deleteP">
+        function <span class="apidocSignatureSpan">ali-mqs.MQ.prototype.</span>deleteP
+        <span class="apidocSignatureSpan">(receiptHandle)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">deleteP = function (receiptHandle) {
+    debug("DELETE " + this._url);
+    return this._openStack.sendP("DELETE", this._url + "?ReceiptHandle=" + receiptHandle);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        VisibilityTimeout: 30,
+        PollingWaitSeconds: 0
+    }).then(console.log, console.error);
+```
+If a mq with same name exists, calling createP will succeed only when all of the mq attributes are all same.
+Any mismatched attributes will cause an "QueueAlreadyExist" failure.
+
+## mqs.<span class="apidocCodeKeywordSpan">deleteP</span>(name)
+Delete an mq.
+
+name: String. The queue name.
+```javascript
+    mqs.deleteP("myAliMQ").then(console.log, console.error);;
+```
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ali-mqs.MQ.prototype.getAttrsP" id="apidoc.module.ali-mqs.MQ.prototype.getAttrsP">module ali-mqs.MQ.prototype.getAttrsP</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ali-mqs.MQ.prototype.getAttrsP.getAttrsP" id="apidoc.element.ali-mqs.MQ.prototype.getAttrsP.getAttrsP">
+        function <span class="apidocSignatureSpan">ali-mqs.MQ.prototype.</span>getAttrsP
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getAttrsP = function () {
+    debug("GET " + this._urlAttr);
+    return this._openStack.sendP("GET", this._urlAttr);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+## mq.notifyStopP()
+Stop mq.notifyRecv working. The promise object returned will not be resolved until the receiving loop stopped actually.
+The max time wait for notifyRecv() stop is determined by waitSeconds passed to mq.notifyRecv.
+```javascript
+    mq.notifyStopP().then(console.log, console.error);
+```
+
+## mq.<span class="apidocCodeKeywordSpan">getAttrsP</span>()
+Get the attributes of the mq.
+
+    mq.getAttrsP().then(console.log, console.error);
+
+## mq.setAttrsP(options)
+Modify the attributes of mq.
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ali-mqs.MQ.prototype.makeAttrURL" id="apidoc.module.ali-mqs.MQ.prototype.makeAttrURL">module ali-mqs.MQ.prototype.makeAttrURL</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ali-mqs.MQ.prototype.makeAttrURL.makeAttrURL" id="apidoc.element.ali-mqs.MQ.prototype.makeAttrURL.makeAttrURL">
+        function <span class="apidocSignatureSpan">ali-mqs.MQ.prototype.</span>makeAttrURL
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">makeAttrURL = function () {
+    return Util.format(this._pattern, this._account.getOwnerId(), this._region, this._name);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    this._timeoutCount = 0;
+    this._timeoutMax = 128;
+    this._name = name;
+    this._account = account;
+    if (region)
+        this._region = region;
+    // make url
+    this._urlAttr = this.<span class="apidocCodeKeywordSpan">makeAttrURL</span>();
+    this._url = this.makeURL();
+    // create the OpenStack object
+    this._openStack = new AliMQS.OpenStack(account);
+    // emitter
+    this._emitter = new Events.EventEmitter();
+}
+// èŽ·å–MQçš„å±žæ€§å€¼
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ali-mqs.MQ.prototype.makeURL" id="apidoc.module.ali-mqs.MQ.prototype.makeURL">module ali-mqs.MQ.prototype.makeURL</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ali-mqs.MQ.prototype.makeURL.makeURL" id="apidoc.element.ali-mqs.MQ.prototype.makeURL.makeURL">
+        function <span class="apidocSignatureSpan">ali-mqs.MQ.prototype.</span>makeURL
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">makeURL = function () {
+    return this.makeAttrURL() + "/messages";
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    this._timeoutMax = 128;
+    this._name = name;
+    this._account = account;
+    if (region)
+        this._region = region;
+    // make url
+    this._urlAttr = this.makeAttrURL();
+    this._url = this.<span class="apidocCodeKeywordSpan">makeURL</span>();
+    // create the OpenStack object
+    this._openStack = new AliMQS.OpenStack(account);
+    // emitter
+    this._emitter = new Events.EventEmitter();
+}
+// èŽ·å–MQçš„å±žæ€§å€¼
+MQ.prototype.getAttrsP = function () {
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ali-mqs.MQ.prototype.notifyRecv" id="apidoc.module.ali-mqs.MQ.prototype.notifyRecv">module ali-mqs.MQ.prototype.notifyRecv</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ali-mqs.MQ.prototype.notifyRecv.notifyRecv" id="apidoc.element.ali-mqs.MQ.prototype.notifyRecv.notifyRecv">
+        function <span class="apidocSignatureSpan">ali-mqs.MQ.prototype.</span>notifyRecv
+        <span class="apidocSignatureSpan">(cb, waitSeconds)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">notifyRecv = function (cb, waitSeconds) {
+    this._signalSTOP = false;
+    this._timeoutCount = 0;
+    this.notifyRecvInternal(cb, waitSeconds || 5);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```
+If you need more time to process the message after received, you can reserve it for a longer time.
+The message will continue to keep invisible for reserveSeconds from now.
+Set a shorter time is also possible.
+If succeed, a new receiptHandle will be returned to replace the old one, further mq.deleteP or mq.reserveP should use the newer.
+And the newer receiptHandle will expired after reserveSeconds past.
+
+## mq.<span class="apidocCodeKeywordSpan">notifyRecv</span>(callback, waitSeconds)
+Register a callback function to receive messages.
+
+callback: The callback function will be called once for each received message.
+And if the callback function return *true*, the message received will be delete automatically,
+while you should delete the message manually, if return *false*.
+
+waitSeconds: number, optional. 1~30. The max seconds to wait in a polling loop, default is 5.
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ali-mqs.MQ.prototype.notifyRecvInternal" id="apidoc.module.ali-mqs.MQ.prototype.notifyRecvInternal">module ali-mqs.MQ.prototype.notifyRecvInternal</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ali-mqs.MQ.prototype.notifyRecvInternal.notifyRecvInternal" id="apidoc.element.ali-mqs.MQ.prototype.notifyRecvInternal.notifyRecvInternal">
+        function <span class="apidocSignatureSpan">ali-mqs.MQ.prototype.</span>notifyRecvInternal
+        <span class="apidocSignatureSpan">(cb, waitSeconds)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">notifyRecvInternal = function (cb, waitSeconds) {
+    var _this = this;
+    // This signal will be triggered by notifyStopP()
+    if (this._signalSTOP) {
+        debug("notifyStopped");
+        this._emitter.emit(this._evStopped);
+        return;
+    }
+    debug("notifyRecvInternal()");
+    try {
+        this.recvP(waitSeconds).done(function (dataRecv) {
+            try {
+                debug(dataRecv);
+                _this._timeoutCount = 0;
+                if (cb(null, dataRecv)) {
+                    _this.deleteP(dataRecv.Message.ReceiptHandle)
+                        .done(null, function (ex) {
+                        console.log(ex);
+                    });
+                }
+            }
+            catch (ex) {
+            }
+            _this.notifyRecvInternal(cb, waitSeconds);
+        }, function (ex) {
+            debug(ex);
+            if ((!ex.Error) || (ex.Error.Code !== "MessageNotExist")) {
+                cb(ex, null);
+            }
+            if (ex) {
+                if (ex.message === "timeout") {
+                    _this._timeoutCount++;
+                    if (_this._timeoutCount &gt; _this._timeoutMax) {
+                        // æžåº¦å¯èƒ½ç½‘ç»œåº•å±‚æ–­äº†
+                        cb(new Error("NetworkBroken"), null);
+                    }
+                }
+                else if (ex.Error &amp;&amp; ex.Error.Code === "MessageNotExist") {
+                    _this._timeoutCount = 0;
+                }
+            }
+            process.nextTick(function () {
+                _this.notifyRecvInternal(cb, waitSeconds);
+            });
+        });
+    }
+    catch (ex) {
+        // ignore any ex
+        console.log(ex.toString());
+        // è¿‡5ç§’é‡è¯•
+        debug("Retry after 5 seconds");
+        setTimeout(function () {
+            _this.notifyRecvInternal(cb, waitSeconds);
+        }, 5000);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        + "&amp;VisibilityTimeout=" + reserveSeconds);
+};
+// æ¶ˆæ¯é€šçŸ¥.æ¯å½“æœ‰æ¶ˆæ¯æ”¶åˆ°æ—¶,éƒ½è°ƒç”¨cbå›žè°ƒå‡½æ•°
+// å¦‚æžœcbè¿”å›žtrue,é‚£ä¹ˆå°†åˆ&nbsp;é™¤æ¶ˆæ¯,å¦åˆ™ä¿ç•™æ¶ˆæ¯
+MQ.prototype.notifyRecv = function (cb, waitSeconds) {
+    this._signalSTOP = false;
+    this._timeoutCount = 0;
+    this.<span class="apidocCodeKeywordSpan">notifyRecvInternal</span>(cb, waitSeconds || 5);
+};
+MQ.prototype.notifyRecvInternal = function (cb, waitSeconds) {
+    var _this = this;
+    // This signal will be triggered by notifyStopP()
+    if (this._signalSTOP) {
+        debug("notifyStopped");
+        this._emitter.emit(this._evStopped);
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ali-mqs.MQ.prototype.notifyStopP" id="apidoc.module.ali-mqs.MQ.prototype.notifyStopP">module ali-mqs.MQ.prototype.notifyStopP</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ali-mqs.MQ.prototype.notifyStopP.notifyStopP" id="apidoc.element.ali-mqs.MQ.prototype.notifyStopP.notifyStopP">
+        function <span class="apidocSignatureSpan">ali-mqs.MQ.prototype.</span>notifyStopP
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">notifyStopP = function () {
+    var _this = this;
+    if (this._signalSTOP)
+        return Promise.resolve(this._evStopped);
+    this._signalSTOP = true;
+    return new Promise(function (resolve) {
+        _this._emitter.once(_this._evStopped, function () {
+            resolve(_this._evStopped);
+        });
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        return true; // this will cause message to be deleted automatically
+    });
+```
+
+Both callback functions will work if you call notifyRecv twice for 2 different callback functions.
+But each received message only will trigger one of them only.
+
+## mq.<span class="apidocCodeKeywordSpan">notifyStopP</span>()
+Stop mq.notifyRecv working. The promise object returned will not be resolved until the receiving loop stopped actually.
+The max time wait for notifyRecv() stop is determined by waitSeconds passed to mq.notifyRecv.
+```javascript
+    mq.notifyStopP().then(console.log, console.error);
+```
+
+## mq.getAttrsP()
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ali-mqs.MQ.prototype.peekP" id="apidoc.module.ali-mqs.MQ.prototype.peekP">module ali-mqs.MQ.prototype.peekP</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ali-mqs.MQ.prototype.peekP.peekP" id="apidoc.element.ali-mqs.MQ.prototype.peekP.peekP">
+        function <span class="apidocSignatureSpan">ali-mqs.MQ.prototype.</span>peekP
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">peekP = function () {
+    var _this = this;
+    debug("GET " + this._url);
+    return this._openStack.sendP("GET", this._url + "?peekonly=true").then(function (data) {
+        debug(data);
+        if (data &amp;&amp; data.Message &amp;&amp; data.Message.MessageBody) {
+            data.Message.MessageBody = _this.base64ToUtf8(data.Message.MessageBody);
+        }
+        return data;
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+waitSeconds: number. optional.
+The max seconds to wait if queue is empty, after that an error *MessageNotExist* will be returned.
+```javascript
+    mq.recvP(5).then(console.log, console.error);
+```
+
+## mq.<span class="apidocCodeKeywordSpan">peekP</span>()
+Peek a message.
+This will not change the message to invisible.
+```javascript
+    mq.peekP(5).then(console.log, console.error);
+```
+
+## mq.deleteP(receiptHandle)
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ali-mqs.MQ.prototype.recvP" id="apidoc.module.ali-mqs.MQ.prototype.recvP">module ali-mqs.MQ.prototype.recvP</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ali-mqs.MQ.prototype.recvP.recvP" id="apidoc.element.ali-mqs.MQ.prototype.recvP.recvP">
+        function <span class="apidocSignatureSpan">ali-mqs.MQ.prototype.</span>recvP
+        <span class="apidocSignatureSpan">(waitSeconds)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">recvP = function (waitSeconds) {
+    var _this = this;
+    var url = this._url;
+    if (waitSeconds)
+        url += "?waitseconds=" + waitSeconds;
+    debug("GET " + url);
+    return new Promise(function (resolve, reject) {
+        var bGotResponse = false;
+        // wait more 5 seconds to trigger timeout error
+        var timeOutSeconds = 5;
+        if (waitSeconds)
+            timeOutSeconds += waitSeconds;
+        setTimeout(function () {
+            if (!bGotResponse)
+                reject(new Error("timeout"));
+        }, 1000 * timeOutSeconds);
+        _this._openStack.sendP("GET", url).done(function (data) {
+            debug(data);
+            bGotResponse = true;
+            if (data &amp;&amp; data.Message &amp;&amp; data.Message.MessageBody) {
+                data.Message.MessageBody = _this.base64ToUtf8(data.Message.MessageBody);
+            }
+            resolve(data);
+        }, function (ex) {
+            debug(ex);
+            bGotResponse = true;
+            reject(ex);
+        });
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+delaySeconds: number, optional. How many seconds will the messages be visible after sent. 0~604800(7days), default is 0.
+This argument is prior to the options.DelaySeconds in attributes of message queue.
+```javascript
+mq.sendP("Hello Ali-MQS", 8, 0).then(console.log, console.error);
+```
+
+## mq.<span class="apidocCodeKeywordSpan">recvP</span>(waitSeconds)
+Receive a message from queue.
+This will change the message to invisible for a while.
+
+waitSeconds: number. optional.
+The max seconds to wait if queue is empty, after that an error *MessageNotExist* will be returned.
+```javascript
+mq.recvP(5).then(console.log, console.error);
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ali-mqs.MQ.prototype.reserveP" id="apidoc.module.ali-mqs.MQ.prototype.reserveP">module ali-mqs.MQ.prototype.reserveP</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ali-mqs.MQ.prototype.reserveP.reserveP" id="apidoc.element.ali-mqs.MQ.prototype.reserveP.reserveP">
+        function <span class="apidocSignatureSpan">ali-mqs.MQ.prototype.</span>reserveP
+        <span class="apidocSignatureSpan">(receiptHandle, reserveSeconds)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">reserveP = function (receiptHandle, reserveSeconds) {
+    debug("PUT " + this._url);
+    return this._openStack.sendP("PUT", this._url
+        + "?ReceiptHandle=" + receiptHandle
+        + "&amp;VisibilityTimeout=" + reserveSeconds);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+receiptHandle: String. Return by mq.recvP or mq.notifyRecv.
+```javascript
+mq.recvP(5).then(function(data){
+    return mq.deleteP(data.Message.ReceiptHandle);
+}).then(console.log, console.error);
+```
+
+## mq.<span class="apidocCodeKeywordSpan">reserveP</span>(receiptHandle, reserveSeconds)
+Reserve a received message.
+
+receiptHandle: String. Return by mq.recvP or mq.notifyRecv.
+
+reserveSeconds: number. How long will the message be reserved, in seconds. 1~43200(12hours).
+```javascript
+mq.recvP().then(function(data){
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ali-mqs.MQ.prototype.sendP" id="apidoc.module.ali-mqs.MQ.prototype.sendP">module ali-mqs.MQ.prototype.sendP</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ali-mqs.MQ.prototype.sendP.sendP" id="apidoc.element.ali-mqs.MQ.prototype.sendP.sendP">
+        function <span class="apidocSignatureSpan">ali-mqs.MQ.prototype.</span>sendP
+        <span class="apidocSignatureSpan">(msg, priority, delaySeconds)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sendP = function (msg, priority, delaySeconds) {
+    var b64 = this.utf8ToBase64(msg);
+    var body = { Message: { MessageBody: b64 } };
+    if (!isNaN(priority))
+        body.Message.Priority = priority;
+    if (!isNaN(delaySeconds))
+        body.Message.DelaySeconds = delaySeconds;
+    debug("PUT " + this._url, body);
+    return this._openStack.sendP("POST", this._url, body);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Use 'npm install ali-mqs' to install the package.
+
+```javascript
+    var AliMQS = require("ali-mqs");
+    var account = new AliMQS.Account("&lt;your-owner-id&gt;", "&lt;your-key-id&gt;", "&lt;your
+-key-secret&gt;");
+    var mq = new AliMQS.MQ("&lt;your-mq-name&gt;", account, "hangzhou");
+    // send message
+    mq.<span class="apidocCodeKeywordSpan">sendP</span>("Hello ali-mqs").then(console.log, console.error);
+```
+
+# Promised
+The ali-mqs use the [promise](https://www.npmjs.org/package/promise) pattern.
+Any functions suffix with 'P' indicate a promise object will be returned from it.
+
+# Typescript
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ali-mqs.MQ.prototype.setAttrsP" id="apidoc.module.ali-mqs.MQ.prototype.setAttrsP">module ali-mqs.MQ.prototype.setAttrsP</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ali-mqs.MQ.prototype.setAttrsP.setAttrsP" id="apidoc.element.ali-mqs.MQ.prototype.setAttrsP.setAttrsP">
+        function <span class="apidocSignatureSpan">ali-mqs.MQ.prototype.</span>setAttrsP
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setAttrsP = function (options) {
+    var body = { Queue: options };
+    debug("PUT " + this._urlAttr, body);
+    return this._openStack.sendP("PUT", this._urlAttr + "?metaoverride=true", body);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```
+
+## mq.getAttrsP()
+Get the attributes of the mq.
+
+mq.getAttrsP().then(console.log, console.error);
+
+## mq.<span class="apidocCodeKeywordSpan">setAttrsP</span>(options)
+Modify the attributes of mq.
+
+options: the queue attributes. See the [options](#options) of mqs.createP.
+```javascript
+mq.setAttrsP({
+    DelaySeconds: 0,
+    MaximumMessageSize: 65536,
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ali-mqs.MQ.prototype.utf8ToBase64" id="apidoc.module.ali-mqs.MQ.prototype.utf8ToBase64">module ali-mqs.MQ.prototype.utf8ToBase64</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ali-mqs.MQ.prototype.utf8ToBase64.utf8ToBase64" id="apidoc.element.ali-mqs.MQ.prototype.utf8ToBase64.utf8ToBase64">
+        function <span class="apidocSignatureSpan">ali-mqs.MQ.prototype.</span>utf8ToBase64
+        <span class="apidocSignatureSpan">(src)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">utf8ToBase64 = function (src) {
+    var buf = new Buffer.Buffer(src, 'utf8');
+    return buf.toString('base64');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+MQ.prototype.setAttrsP = function (options) {
+    var body = { Queue: options };
+    debug("PUT " + this._urlAttr, body);
+    return this._openStack.sendP("PUT", this._urlAttr + "?metaoverride=true", body);
+};
+// å‘é€æ¶ˆæ¯
+MQ.prototype.sendP = function (msg, priority, delaySeconds) {
+    var b64 = this.<span class="apidocCodeKeywordSpan">utf8ToBase64</span>(msg);
+    var body = { Message: { MessageBody: b64 } };
+    if (!isNaN(priority))
+        body.Message.Priority = priority;
+    if (!isNaN(delaySeconds))
+        body.Message.DelaySeconds = delaySeconds;
+    debug("PUT " + this._url, body);
+    return this._openStack.sendP("POST", this._url, body);
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ali-mqs.MQS" id="apidoc.module.ali-mqs.MQS">module ali-mqs.MQS</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ali-mqs.MQS.MQS" id="apidoc.element.ali-mqs.MQS.MQS">
+        function <span class="apidocSignatureSpan">ali-mqs.</span>MQS
+        <span class="apidocSignatureSpan">(account, region)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function MQS(account, region) {
+    this._region = "hangzhou"; // region: hangzhou, beijing, qingdao
+    this._pattern = "http://%s.mqs-cn-%s.aliyuncs.com";
+    // save the input arguments
+    this._account = account;
+    if (region)
+        this._region = region;
+    // make url
+    this._url = this.makeURL();
+    // create the OpenStack object
+    this._openStack = new AliMQS.OpenStack(account);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+account: An account object.
+
+region: String, optional. It can be "hangzhou", "beijing" or "qingdao", the 3 data center that provide
+ mqs service.
+Default is "hangzhou". It can also be internal address "hangzhou-internal", "beijing-internal" or &amp;#
+x22;qingdao-internal".
+```javascript
+    var AliMQS = require("ali-mqs");
+    var account = new AliMQS.Account("&lt;your-owner-id&gt;", "&lt;your-key-id&gt;", "&lt;your
+-key-secret&gt;");
+    var mqs = new AliMQS.<span class="apidocCodeKeywordSpan">MQS</span>(account, "hangzhou");
+```
+
+## mqs.listP(prefix, pageSize, pageMarker)
+List all of the queue in a data center.
+
+prefix: String, optional. Return only mq with the prefix.
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ali-mqs.MQS.prototype" id="apidoc.module.ali-mqs.MQS.prototype">module ali-mqs.MQS.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ali-mqs.MQS.prototype.createP" id="apidoc.element.ali-mqs.MQS.prototype.createP">
+        function <span class="apidocSignatureSpan">ali-mqs.MQS.prototype.</span>createP
+        <span class="apidocSignatureSpan">(name, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createP = function (name, options) {
+    var body = { Queue: "" };
+    if (options)
+        body.Queue = options;
+    var url = Url.resolve(this._url, name);
+    return this._openStack.sendP("PUT", url, body);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        console.log(data);
+        return mqs.listP("my", 20, data.Queues.NextMarker);
+    }).then(function(dataP2){
+        console.log(dataP2);
+    }, console.error);
+```
+
+## mqs.<span class="apidocCodeKeywordSpan">createP</span>(name, &lt;a name="options"&gt;options&lt;/a&gt;)
+Create a mq.
+
+name: String. The queue name.
+
+options: optional. The queue attributes.
+
+options.DelaySeconds: number. How many seconds will the messages be visible after sent. 0~604800(7days), default is 0.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ali-mqs.MQS.prototype.deleteP" id="apidoc.element.ali-mqs.MQS.prototype.deleteP">
+        function <span class="apidocSignatureSpan">ali-mqs.MQS.prototype.</span>deleteP
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">deleteP = function (name) {
+    var url = Url.resolve(this._url, name);
+    return this._openStack.sendP("DELETE", url);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        VisibilityTimeout: 30,
+        PollingWaitSeconds: 0
+    }).then(console.log, console.error);
+```
+If a mq with same name exists, calling createP will succeed only when all of the mq attributes are all same.
+Any mismatched attributes will cause an "QueueAlreadyExist" failure.
+
+## mqs.<span class="apidocCodeKeywordSpan">deleteP</span>(name)
+Delete an mq.
+
+name: String. The queue name.
+```javascript
+    mqs.deleteP("myAliMQ").then(console.log, console.error);;
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ali-mqs.MQS.prototype.listP" id="apidoc.element.ali-mqs.MQS.prototype.listP">
+        function <span class="apidocSignatureSpan">ali-mqs.MQS.prototype.</span>listP
+        <span class="apidocSignatureSpan">(prefix, pageSize, pageMarker)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">listP = function (prefix, pageSize, pageMarker) {
+    var headers = {};
+    if (prefix)
+        headers["x-mqs-prefix"] = prefix;
+    if (pageMarker)
+        headers["x-mqs-marker"] = pageMarker;
+    if (pageSize)
+        headers["x-mqs-ret-number"] = pageSize;
+    return this._openStack.sendP("GET", this._url, null, headers);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Default is "hangzhou". It can also be internal address "hangzhou-internal", "beijing-internal" or &amp;#
+x22;qingdao-internal".
+```javascript
+    var AliMQS = require("ali-mqs");
+    var account = new AliMQS.Account("&lt;your-owner-id&gt;", "&lt;your-key-id&gt;", "&lt;your
+-key-secret&gt;");
+    var mqs = new AliMQS.MQS(account, "hangzhou");
+```
+
+## mqs.<span class="apidocCodeKeywordSpan">listP</span>(prefix, pageSize, pageMarker)
+List all of the queue in a data center.
+
+prefix: String, optional. Return only mq with the prefix.
+
+pageSize: number, optional. How many mqs will be returned in a page, 1~1000, default is 1000.
+
+pageMarker: String, optional. Request the next page, the value is returned in last call.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ali-mqs.MQS.prototype.makeURL" id="apidoc.element.ali-mqs.MQS.prototype.makeURL">
+        function <span class="apidocSignatureSpan">ali-mqs.MQS.prototype.</span>makeURL
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">makeURL = function () {
+    return Util.format(this._pattern, this._account.getOwnerId(), this._region);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    this._timeoutMax = 128;
+    this._name = name;
+    this._account = account;
+    if (region)
+        this._region = region;
+    // make url
+    this._urlAttr = this.makeAttrURL();
+    this._url = this.<span class="apidocCodeKeywordSpan">makeURL</span>();
+    // create the OpenStack object
+    this._openStack = new AliMQS.OpenStack(account);
+    // emitter
+    this._emitter = new Events.EventEmitter();
+}
+// èŽ·å–MQçš„å±žæ€§å€¼
+MQ.prototype.getAttrsP = function () {
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ali-mqs.MQS.prototype.createP" id="apidoc.module.ali-mqs.MQS.prototype.createP">module ali-mqs.MQS.prototype.createP</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ali-mqs.MQS.prototype.createP.createP" id="apidoc.element.ali-mqs.MQS.prototype.createP.createP">
+        function <span class="apidocSignatureSpan">ali-mqs.MQS.prototype.</span>createP
+        <span class="apidocSignatureSpan">(name, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createP = function (name, options) {
+    var body = { Queue: "" };
+    if (options)
+        body.Queue = options;
+    var url = Url.resolve(this._url, name);
+    return this._openStack.sendP("PUT", url, body);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        console.log(data);
+        return mqs.listP("my", 20, data.Queues.NextMarker);
+    }).then(function(dataP2){
+        console.log(dataP2);
+    }, console.error);
+```
+
+## mqs.<span class="apidocCodeKeywordSpan">createP</span>(name, &lt;a name="options"&gt;options&lt;/a&gt;)
+Create a mq.
+
+name: String. The queue name.
+
+options: optional. The queue attributes.
+
+options.DelaySeconds: number. How many seconds will the messages be visible after sent. 0~604800(7days), default is 0.
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ali-mqs.MQS.prototype.deleteP" id="apidoc.module.ali-mqs.MQS.prototype.deleteP">module ali-mqs.MQS.prototype.deleteP</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ali-mqs.MQS.prototype.deleteP.deleteP" id="apidoc.element.ali-mqs.MQS.prototype.deleteP.deleteP">
+        function <span class="apidocSignatureSpan">ali-mqs.MQS.prototype.</span>deleteP
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">deleteP = function (name) {
+    var url = Url.resolve(this._url, name);
+    return this._openStack.sendP("DELETE", url);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        VisibilityTimeout: 30,
+        PollingWaitSeconds: 0
+    }).then(console.log, console.error);
+```
+If a mq with same name exists, calling createP will succeed only when all of the mq attributes are all same.
+Any mismatched attributes will cause an "QueueAlreadyExist" failure.
+
+## mqs.<span class="apidocCodeKeywordSpan">deleteP</span>(name)
+Delete an mq.
+
+name: String. The queue name.
+```javascript
+    mqs.deleteP("myAliMQ").then(console.log, console.error);;
+```
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ali-mqs.MQS.prototype.listP" id="apidoc.module.ali-mqs.MQS.prototype.listP">module ali-mqs.MQS.prototype.listP</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ali-mqs.MQS.prototype.listP.listP" id="apidoc.element.ali-mqs.MQS.prototype.listP.listP">
+        function <span class="apidocSignatureSpan">ali-mqs.MQS.prototype.</span>listP
+        <span class="apidocSignatureSpan">(prefix, pageSize, pageMarker)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">listP = function (prefix, pageSize, pageMarker) {
+    var headers = {};
+    if (prefix)
+        headers["x-mqs-prefix"] = prefix;
+    if (pageMarker)
+        headers["x-mqs-marker"] = pageMarker;
+    if (pageSize)
+        headers["x-mqs-ret-number"] = pageSize;
+    return this._openStack.sendP("GET", this._url, null, headers);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Default is "hangzhou". It can also be internal address "hangzhou-internal", "beijing-internal" or &amp;#
+x22;qingdao-internal".
+```javascript
+    var AliMQS = require("ali-mqs");
+    var account = new AliMQS.Account("&lt;your-owner-id&gt;", "&lt;your-key-id&gt;", "&lt;your
+-key-secret&gt;");
+    var mqs = new AliMQS.MQS(account, "hangzhou");
+```
+
+## mqs.<span class="apidocCodeKeywordSpan">listP</span>(prefix, pageSize, pageMarker)
+List all of the queue in a data center.
+
+prefix: String, optional. Return only mq with the prefix.
+
+pageSize: number, optional. How many mqs will be returned in a page, 1~1000, default is 1000.
+
+pageMarker: String, optional. Request the next page, the value is returned in last call.
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ali-mqs.MQS.prototype.makeURL" id="apidoc.module.ali-mqs.MQS.prototype.makeURL">module ali-mqs.MQS.prototype.makeURL</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ali-mqs.MQS.prototype.makeURL.makeURL" id="apidoc.element.ali-mqs.MQS.prototype.makeURL.makeURL">
+        function <span class="apidocSignatureSpan">ali-mqs.MQS.prototype.</span>makeURL
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">makeURL = function () {
+    return Util.format(this._pattern, this._account.getOwnerId(), this._region);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    this._timeoutMax = 128;
+    this._name = name;
+    this._account = account;
+    if (region)
+        this._region = region;
+    // make url
+    this._urlAttr = this.makeAttrURL();
+    this._url = this.<span class="apidocCodeKeywordSpan">makeURL</span>();
+    // create the OpenStack object
+    this._openStack = new AliMQS.OpenStack(account);
+    // emitter
+    this._emitter = new Events.EventEmitter();
+}
+// èŽ·å–MQçš„å±žæ€§å€¼
+MQ.prototype.getAttrsP = function () {
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ali-mqs.OpenStack" id="apidoc.module.ali-mqs.OpenStack">module ali-mqs.OpenStack</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ali-mqs.OpenStack.OpenStack" id="apidoc.element.ali-mqs.OpenStack.OpenStack">
+        function <span class="apidocSignatureSpan">ali-mqs.</span>OpenStack
+        <span class="apidocSignatureSpan">(account)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function OpenStack(account) {
+    this._patternMQS = "MQS %s:%s";
+    this._patternSign = "%s\n%s\n%s\n%s\n%s%s";
+    this._contentType = "text/xml;charset=utf-8";
+    this._version = "2014-07-08";
+    this._account = account;
+    // xml builder
+    this._xmlBuilder = new Xml2js.Builder();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    this._account = account;
+    if (region)
+        this._region = region;
+    // make url
+    this._urlAttr = this.makeAttrURL();
+    this._url = this.makeURL();
+    // create the OpenStack object
+    this._openStack = new AliMQS.<span class="apidocCodeKeywordSpan">OpenStack</span>(account);
+    // emitter
+    this._emitter = new Events.EventEmitter();
+}
+// èŽ·å–MQçš„å±žæ€§å€¼
+MQ.prototype.getAttrsP = function () {
+    debug("GET " + this._urlAttr);
+    return this._openStack.sendP("GET", this._urlAttr);
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ali-mqs.OpenStack.prototype" id="apidoc.module.ali-mqs.OpenStack.prototype">module ali-mqs.OpenStack.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ali-mqs.OpenStack.prototype.authorize" id="apidoc.element.ali-mqs.OpenStack.prototype.authorize">
+        function <span class="apidocSignatureSpan">ali-mqs.OpenStack.prototype.</span>authorize
+        <span class="apidocSignatureSpan">(httpVerb, mqsURI, mqsHeaders, contentType, contentMD5, tm)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">authorize = function (httpVerb, mqsURI, mqsHeaders, contentType, contentMD5, tm) {
+    return Util.format(this._patternMQS, this._account.getKeyId(), this.signature(httpVerb, mqsURI, mqsHeaders, contentType, contentMD5
+, tm));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        if (k.indexOf("x-mqs-") === 0) {
+            mqsHeaders += Util.format("%s:%s\n", k, headsLower[k]);
+        }
+    }
+    var tm = (new Date()).toUTCString();
+    var mqsURL = Url.parse(url);
+    headers.Date = tm;
+    headers.Authorization = this.<span class="apidocCodeKeywordSpan">authorize</span>(mothod, mqsURL.path, mqsHeaders, contentType
+, contentMD5, tm);
+    headers.Host = mqsURL.host;
+    return headers;
+};
+// ali mqs authorize header
+OpenStack.prototype.authorize = function (httpVerb, mqsURI, mqsHeaders, contentType, contentMD5, tm) {
+    return Util.format(this._patternMQS, this._account.getKeyId(), this.signature(httpVerb, mqsURI, mqsHeaders, contentType, contentMD5
+, tm));
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ali-mqs.OpenStack.prototype.makeHeaders" id="apidoc.element.ali-mqs.OpenStack.prototype.makeHeaders">
+        function <span class="apidocSignatureSpan">ali-mqs.OpenStack.prototype.</span>makeHeaders
+        <span class="apidocSignatureSpan">(mothod, url, headers, body)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">makeHeaders = function (mothod, url, headers, body) {
+    // if not exist, create one
+    if (!headers)
+        headers = {};
+    var contentMD5 = "";
+    var contentType = "";
+    if (body) {
+        if (!headers["Content-Length"])
+            headers["Content-Length"] = body.length;
+        if (!headers["Content-Type"])
+            headers["Content-Type"] = this._contentType;
+        contentType = headers["Content-Type"];
+        contentMD5 = this._account.b64md5(body);
+        headers["Content-MD5"] = contentMD5;
+    }
+    if (!headers["x-mqs-version"])
+        headers["x-mqs-version"] = this._version;
+    // lowercase &amp; sort &amp; extract the x-mqs-&lt;any&gt;
+    var headsLower = {};
+    var keys = [];
+    for (var key in headers) {
+        if (headers.hasOwnProperty(key)) {
+            var lower = key.toLowerCase();
+            keys.push(lower);
+            headsLower[lower] = headers[key];
+        }
+    }
+    keys.sort();
+    var mqsHeaders = "";
+    for (var i in keys) {
+        var k = keys[i];
+        if (k.indexOf("x-mqs-") === 0) {
+            mqsHeaders += Util.format("%s:%s\n", k, headsLower[k]);
+        }
+    }
+    var tm = (new Date()).toUTCString();
+    var mqsURL = Url.parse(url);
+    headers.Date = tm;
+    headers.Authorization = this.authorize(mothod, mqsURL.path, mqsHeaders, contentType, contentMD5, tm);
+    headers.Host = mqsURL.host;
+    return headers;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// url: request url
+// body: optional, request body
+// head: optional, request heads
+OpenStack.prototype.sendP = function (method, url, body, headers) {
+    var req = { method: method, url: url };
+    if (body)
+        req.body = this._xmlBuilder.buildObject(body);
+    req.headers = this.<span class="apidocCodeKeywordSpan">makeHeaders</span>(method, url, headers, req.body);
+    return Request.requestP(req).then(function (response) {
+        // convert the body from xml to json
+        return Xml2js.parseStringP(response.body, { explicitArray: false })
+            .then(function (bodyJSON) {
+            response.bodyJSON = bodyJSON;
+            return response;
+        }, function () {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ali-mqs.OpenStack.prototype.sendP" id="apidoc.element.ali-mqs.OpenStack.prototype.sendP">
+        function <span class="apidocSignatureSpan">ali-mqs.OpenStack.prototype.</span>sendP
+        <span class="apidocSignatureSpan">(method, url, body, headers)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sendP = function (method, url, body, headers) {
+    var req = { method: method, url: url };
+    if (body)
+        req.body = this._xmlBuilder.buildObject(body);
+    req.headers = this.makeHeaders(method, url, headers, req.body);
+    return Request.requestP(req).then(function (response) {
+        // convert the body from xml to json
+        return Xml2js.parseStringP(response.body, { explicitArray: false })
+            .then(function (bodyJSON) {
+            response.bodyJSON = bodyJSON;
+            return response;
+        }, function () {
+            // cannot parse as xml
+            response.bodyJSON = response.body;
+            return response;
+        });
+    }).then(function (response) {
+        if (response.statusCode &lt; 400) {
+            if (response.bodyJSON)
+                return response.bodyJSON;
+            else
+                return response.statusCode;
+        }
+        else {
+            if (response.bodyJSON)
+                return Promise.reject(response.bodyJSON);
+            else
+                return Promise.reject(response.statusCode);
+        }
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Use 'npm install ali-mqs' to install the package.
+
+```javascript
+    var AliMQS = require("ali-mqs");
+    var account = new AliMQS.Account("&lt;your-owner-id&gt;", "&lt;your-key-id&gt;", "&lt;your
+-key-secret&gt;");
+    var mq = new AliMQS.MQ("&lt;your-mq-name&gt;", account, "hangzhou");
+    // send message
+    mq.<span class="apidocCodeKeywordSpan">sendP</span>("Hello ali-mqs").then(console.log, console.error);
+```
+
+# Promised
+The ali-mqs use the [promise](https://www.npmjs.org/package/promise) pattern.
+Any functions suffix with 'P' indicate a promise object will be returned from it.
+
+# Typescript
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ali-mqs.OpenStack.prototype.signature" id="apidoc.element.ali-mqs.OpenStack.prototype.signature">
+        function <span class="apidocSignatureSpan">ali-mqs.OpenStack.prototype.</span>signature
+        <span class="apidocSignatureSpan">(httpVerb, mqsURI, mqsHeaders, contentType, contentMD5, tm)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">signature = function (httpVerb, mqsURI, mqsHeaders, contentType, contentMD5, tm) {
+    var text = Util.format(this._patternSign, httpVerb, contentMD5, contentType, tm, mqsHeaders, mqsURI);
+    return this._account.hmac_sha1(text, "base64");
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    headers.Date = tm;
+    headers.Authorization = this.authorize(mothod, mqsURL.path, mqsHeaders, contentType, contentMD5, tm);
+    headers.Host = mqsURL.host;
+    return headers;
+};
+// ali mqs authorize header
+OpenStack.prototype.authorize = function (httpVerb, mqsURI, mqsHeaders, contentType, contentMD5, tm) {
+    return Util.format(this._patternMQS, this._account.getKeyId(), this.<span class="apidocCodeKeywordSpan">signature</span>(httpVerb
+, mqsURI, mqsHeaders, contentType, contentMD5, tm));
+};
+// ali mqs signature
+OpenStack.prototype.signature = function (httpVerb, mqsURI, mqsHeaders, contentType, contentMD5, tm) {
+    var text = Util.format(this._patternSign, httpVerb, contentMD5, contentType, tm, mqsHeaders, mqsURI);
+    return this._account.hmac_sha1(text, "base64");
+};
+return OpenStack;
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ali-mqs.OpenStack.prototype.authorize" id="apidoc.module.ali-mqs.OpenStack.prototype.authorize">module ali-mqs.OpenStack.prototype.authorize</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ali-mqs.OpenStack.prototype.authorize.authorize" id="apidoc.element.ali-mqs.OpenStack.prototype.authorize.authorize">
+        function <span class="apidocSignatureSpan">ali-mqs.OpenStack.prototype.</span>authorize
+        <span class="apidocSignatureSpan">(httpVerb, mqsURI, mqsHeaders, contentType, contentMD5, tm)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">authorize = function (httpVerb, mqsURI, mqsHeaders, contentType, contentMD5, tm) {
+    return Util.format(this._patternMQS, this._account.getKeyId(), this.signature(httpVerb, mqsURI, mqsHeaders, contentType, contentMD5
+, tm));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        if (k.indexOf("x-mqs-") === 0) {
+            mqsHeaders += Util.format("%s:%s\n", k, headsLower[k]);
+        }
+    }
+    var tm = (new Date()).toUTCString();
+    var mqsURL = Url.parse(url);
+    headers.Date = tm;
+    headers.Authorization = this.<span class="apidocCodeKeywordSpan">authorize</span>(mothod, mqsURL.path, mqsHeaders, contentType
+, contentMD5, tm);
+    headers.Host = mqsURL.host;
+    return headers;
+};
+// ali mqs authorize header
+OpenStack.prototype.authorize = function (httpVerb, mqsURI, mqsHeaders, contentType, contentMD5, tm) {
+    return Util.format(this._patternMQS, this._account.getKeyId(), this.signature(httpVerb, mqsURI, mqsHeaders, contentType, contentMD5
+, tm));
+};
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ali-mqs.OpenStack.prototype.makeHeaders" id="apidoc.module.ali-mqs.OpenStack.prototype.makeHeaders">module ali-mqs.OpenStack.prototype.makeHeaders</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ali-mqs.OpenStack.prototype.makeHeaders.makeHeaders" id="apidoc.element.ali-mqs.OpenStack.prototype.makeHeaders.makeHeaders">
+        function <span class="apidocSignatureSpan">ali-mqs.OpenStack.prototype.</span>makeHeaders
+        <span class="apidocSignatureSpan">(mothod, url, headers, body)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">makeHeaders = function (mothod, url, headers, body) {
+    // if not exist, create one
+    if (!headers)
+        headers = {};
+    var contentMD5 = "";
+    var contentType = "";
+    if (body) {
+        if (!headers["Content-Length"])
+            headers["Content-Length"] = body.length;
+        if (!headers["Content-Type"])
+            headers["Content-Type"] = this._contentType;
+        contentType = headers["Content-Type"];
+        contentMD5 = this._account.b64md5(body);
+        headers["Content-MD5"] = contentMD5;
+    }
+    if (!headers["x-mqs-version"])
+        headers["x-mqs-version"] = this._version;
+    // lowercase &amp; sort &amp; extract the x-mqs-&lt;any&gt;
+    var headsLower = {};
+    var keys = [];
+    for (var key in headers) {
+        if (headers.hasOwnProperty(key)) {
+            var lower = key.toLowerCase();
+            keys.push(lower);
+            headsLower[lower] = headers[key];
+        }
+    }
+    keys.sort();
+    var mqsHeaders = "";
+    for (var i in keys) {
+        var k = keys[i];
+        if (k.indexOf("x-mqs-") === 0) {
+            mqsHeaders += Util.format("%s:%s\n", k, headsLower[k]);
+        }
+    }
+    var tm = (new Date()).toUTCString();
+    var mqsURL = Url.parse(url);
+    headers.Date = tm;
+    headers.Authorization = this.authorize(mothod, mqsURL.path, mqsHeaders, contentType, contentMD5, tm);
+    headers.Host = mqsURL.host;
+    return headers;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// url: request url
+// body: optional, request body
+// head: optional, request heads
+OpenStack.prototype.sendP = function (method, url, body, headers) {
+    var req = { method: method, url: url };
+    if (body)
+        req.body = this._xmlBuilder.buildObject(body);
+    req.headers = this.<span class="apidocCodeKeywordSpan">makeHeaders</span>(method, url, headers, req.body);
+    return Request.requestP(req).then(function (response) {
+        // convert the body from xml to json
+        return Xml2js.parseStringP(response.body, { explicitArray: false })
+            .then(function (bodyJSON) {
+            response.bodyJSON = bodyJSON;
+            return response;
+        }, function () {
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ali-mqs.OpenStack.prototype.sendP" id="apidoc.module.ali-mqs.OpenStack.prototype.sendP">module ali-mqs.OpenStack.prototype.sendP</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ali-mqs.OpenStack.prototype.sendP.sendP" id="apidoc.element.ali-mqs.OpenStack.prototype.sendP.sendP">
+        function <span class="apidocSignatureSpan">ali-mqs.OpenStack.prototype.</span>sendP
+        <span class="apidocSignatureSpan">(method, url, body, headers)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sendP = function (method, url, body, headers) {
+    var req = { method: method, url: url };
+    if (body)
+        req.body = this._xmlBuilder.buildObject(body);
+    req.headers = this.makeHeaders(method, url, headers, req.body);
+    return Request.requestP(req).then(function (response) {
+        // convert the body from xml to json
+        return Xml2js.parseStringP(response.body, { explicitArray: false })
+            .then(function (bodyJSON) {
+            response.bodyJSON = bodyJSON;
+            return response;
+        }, function () {
+            // cannot parse as xml
+            response.bodyJSON = response.body;
+            return response;
+        });
+    }).then(function (response) {
+        if (response.statusCode &lt; 400) {
+            if (response.bodyJSON)
+                return response.bodyJSON;
+            else
+                return response.statusCode;
+        }
+        else {
+            if (response.bodyJSON)
+                return Promise.reject(response.bodyJSON);
+            else
+                return Promise.reject(response.statusCode);
+        }
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Use 'npm install ali-mqs' to install the package.
+
+```javascript
+    var AliMQS = require("ali-mqs");
+    var account = new AliMQS.Account("&lt;your-owner-id&gt;", "&lt;your-key-id&gt;", "&lt;your
+-key-secret&gt;");
+    var mq = new AliMQS.MQ("&lt;your-mq-name&gt;", account, "hangzhou");
+    // send message
+    mq.<span class="apidocCodeKeywordSpan">sendP</span>("Hello ali-mqs").then(console.log, console.error);
+```
+
+# Promised
+The ali-mqs use the [promise](https://www.npmjs.org/package/promise) pattern.
+Any functions suffix with 'P' indicate a promise object will be returned from it.
+
+# Typescript
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ali-mqs.OpenStack.prototype.signature" id="apidoc.module.ali-mqs.OpenStack.prototype.signature">module ali-mqs.OpenStack.prototype.signature</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ali-mqs.OpenStack.prototype.signature.signature" id="apidoc.element.ali-mqs.OpenStack.prototype.signature.signature">
+        function <span class="apidocSignatureSpan">ali-mqs.OpenStack.prototype.</span>signature
+        <span class="apidocSignatureSpan">(httpVerb, mqsURI, mqsHeaders, contentType, contentMD5, tm)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">signature = function (httpVerb, mqsURI, mqsHeaders, contentType, contentMD5, tm) {
+    var text = Util.format(this._patternSign, httpVerb, contentMD5, contentType, tm, mqsHeaders, mqsURI);
+    return this._account.hmac_sha1(text, "base64");
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    headers.Date = tm;
+    headers.Authorization = this.authorize(mothod, mqsURL.path, mqsHeaders, contentType, contentMD5, tm);
+    headers.Host = mqsURL.host;
+    return headers;
+};
+// ali mqs authorize header
+OpenStack.prototype.authorize = function (httpVerb, mqsURI, mqsHeaders, contentType, contentMD5, tm) {
+    return Util.format(this._patternMQS, this._account.getKeyId(), this.<span class="apidocCodeKeywordSpan">signature</span>(httpVerb
+, mqsURI, mqsHeaders, contentType, contentMD5, tm));
+};
+// ali mqs signature
+OpenStack.prototype.signature = function (httpVerb, mqsURI, mqsHeaders, contentType, contentMD5, tm) {
+    var text = Util.format(this._patternSign, httpVerb, contentMD5, contentType, tm, mqsHeaders, mqsURI);
+    return this._account.hmac_sha1(text, "base64");
+};
+return OpenStack;
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
