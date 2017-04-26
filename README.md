@@ -1,6 +1,6 @@
 # npmdoc-ali-mqs
 
-#### api documentation for  [ali-mqs (v1.2.3)](https://github.com/InCar/ali-mns)  [![npm package](https://img.shields.io/npm/v/npmdoc-ali-mqs.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-ali-mqs) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-ali-mqs.svg)](https://travis-ci.org/npmdoc/node-npmdoc-ali-mqs)
+#### basic api documentation for  [ali-mqs (v1.2.3)](https://github.com/InCar/ali-mns)  [![npm package](https://img.shields.io/npm/v/npmdoc-ali-mqs.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-ali-mqs) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-ali-mqs.svg)](https://travis-ci.org/npmdoc/node-npmdoc-ali-mqs)
 
 #### The nodejs SDK for aliyun mqs service
 
@@ -70,7 +70,8 @@
         "prepublish": "grunt",
         "test": "node ./test/main"
     },
-    "version": "1.2.3"
+    "version": "1.2.3",
+    "bin": {}
 }
 ```
 
